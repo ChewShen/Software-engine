@@ -1,0 +1,268 @@
+.home-page-desktop {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 1240px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.home-page-desktop .rectangle {
+  position: relative;
+  width: 1520px;
+  height: 1041.5px;
+  margin: 0;
+}
+
+.home-page-desktop .test12 {
+  position: absolute;
+  left: -7%;
+  
+  
+}
+
+.home-page-desktop .brosemi {
+  position: absolute;
+  width: 234px;
+  height: 212px;
+  top: 277px;
+  left: 519px;
+  object-fit: cover;
+}
+
+.home-page-desktop .pomudance {
+  position: absolute;
+  width: 234px;
+  height: 212px;
+  top: 277px;
+  left: 983px;
+  object-fit: cover;
+}
+
+.home-page-desktop .text-content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  position: absolute;
+  top: 36px;
+  left: 468px;
+}
+
+.home-page-desktop .h {
+  display: inline-flex;
+  height: 90px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.home-page-desktop .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -6px;
+  margin-bottom: -4px;
+  font-family: var(--h1-font-family);
+  font-weight: var(--h1-font-weight);
+  color: var(--light-text);
+  font-size: var(--h1-font-size);
+  text-align: center;
+  letter-spacing: var(--h1-letter-spacing);
+  line-height: var(--h1-line-height);
+  white-space: nowrap;
+  font-style: var(--h1-font-style);
+}
+
+.home-page-desktop .that-one-bakery-shop-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.home-page-desktop .that-one-bakery-shop {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--h4-font-family);
+  font-weight: var(--h4-font-weight);
+  color: var(--light-text);
+  font-size: var(--h4-font-size);
+  text-align: center;
+  letter-spacing: var(--h4-letter-spacing);
+  line-height: var(--h4-line-height);
+  font-style: var(--h4-font-style);
+}
+
+.home-page-desktop .screen-content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52.9px;
+  padding: 18.24px;
+  position: absolute;
+  top: 563px;
+  left: 322px;
+}
+
+.home-page-desktop .macbook-pro {
+  position: relative;
+  width: 1054.38px;
+  height: 589.55px;
+}
+
+.home-page-desktop .furball {
+  position: absolute;
+  width: 796px;
+  height: 515px;
+  top: 42px;
+  left: 143px;
+}
+
+
+.home-page-desktop .div {
+  position: relative;
+  width: fit-content;
+  font-family: var(--h3-font-family);
+  font-weight: var(--h3-font-weight);
+  color: #000000;
+  font-size: var(--h3-font-size);
+  text-align: center;
+  letter-spacing: var(--h3-letter-spacing);
+  line-height: var(--h3-line-height);
+  white-space: nowrap;
+  font-style: var(--h3-font-style);
+}
+
+.home-page-desktop .button {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  width: 192px;
+  height: 71px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 258px;
+  left: 772px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.home-page-desktop .div-wrapper {
+  all: unset;
+  box-sizing: border-box;
+  top: 348px;
+  display: flex;
+  width: 192px;
+  height: 71px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  left: 772px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.home-page-desktop .button-2 {
+  all: unset;
+  box-sizing: border-box;
+  top: 448px;
+  display: flex;
+  width: 192px;
+  height: 71px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  left: 772px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+:root {
+  --primary: rgba(32, 145, 249, 1);
+  --secondary: rgba(231, 124, 64, 1);
+  --text: rgba(37, 43, 66, 1);
+  --second-text: rgba(115, 115, 115, 1);
+  --light-text: rgba(255, 255, 255, 1);
+  --dark-background: rgba(37, 43, 66, 1);
+  --light-background: rgba(255, 255, 255, 1);
+  --hover: rgba(42, 124, 199, 1);
+  --disabled: rgba(142, 194, 242, 1);
+  --light-gray: rgba(189, 189, 189, 1);
+  --h1-font-family: "Montserrat-ExtraBold", Helvetica;
+  --h1-font-weight: 800;
+  --h1-font-size: 58px;
+  --h1-letter-spacing: 0.20000000298023224px;
+  --h1-line-height: 80px;
+  --h1-font-style: normal;
+  --h2-font-family: "Montserrat-Bold", Helvetica;
+  --h2-font-weight: 700;
+  --h2-font-size: 40px;
+  --h2-letter-spacing: 0.20000000298023224px;
+  --h2-line-height: 57px;
+  --h2-font-style: normal;
+  --h3-font-family: "Montserrat-Bold", Helvetica;
+  --h3-font-weight: 700;
+  --h3-font-size: 24px;
+  --h3-letter-spacing: 0.10000000149011612px;
+  --h3-line-height: 36px;
+  --h3-font-style: normal;
+  --h4-font-family: "Montserrat-Medium", Helvetica;
+  --h4-font-weight: 500;
+  --h4-font-size: 24px;
+  --h4-letter-spacing: 0.20000000298023224px;
+  --h4-line-height: 38px;
+  --h4-font-style: normal;
+  --h5-font-family: "Montserrat-Bold", Helvetica;
+  --h5-font-weight: 700;
+  --h5-font-size: 16px;
+  --h5-letter-spacing: 0.10000000149011612px;
+  --h5-line-height: 24px;
+  --h5-font-style: normal;
+  --button-font-family: "Montserrat-Bold", Helvetica;
+  --button-font-weight: 700;
+  --button-font-size: 16px;
+  --button-letter-spacing: 0.20000000298023224px;
+  --button-line-height: 28px;
+  --button-font-style: normal;
+  --paragraphe-font-family: "Montserrat-Medium", Helvetica;
+  --paragraphe-font-weight: 500;
+  --paragraphe-font-size: 16px;
+  --paragraphe-letter-spacing: 0.20000000298023224px;
+  --paragraphe-line-height: 28px;
+  --paragraphe-font-style: normal;
+  --link-font-family: "Montserrat-SemiBold", Helvetica;
+  --link-font-weight: 600;
+  --link-font-size: 16px;
+  --link-letter-spacing: 0.20000000298023224px;
+  --link-line-height: 28px;
+  --link-font-style: normal;
+  --mobile-menu-font-family: "Montserrat-Regular", Helvetica;
+  --mobile-menu-font-weight: 400;
+  --mobile-menu-font-size: 30px;
+  --mobile-menu-letter-spacing: 0.20000000298023224px;
+  --mobile-menu-line-height: 45px;
+  --mobile-menu-font-style: normal;
+  --list-font-family: "Montserrat-Regular", Helvetica;
+  --list-font-weight: 400;
+  --list-font-size: 20px;
+  --list-letter-spacing: 0.20000000298023224px;
+  --list-line-height: 30px;
+  --list-font-style: normal;
+  --SHADOW: 0px 13px 19px 0px rgba(0, 0, 0, 0.07);
+  --dramatic: -31px -22px 19px 0px rgba(0, 0, 0, 0.3);
+  --light-dropshadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  --text-shadow: 0px 13px 19px 0px rgba(0, 0, 0, 0.24);
+}

@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'ResidentEditStyle.css' %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+.profile-page-this {
+   width: 85%; /* Set to your desired width */
+   margin: 0 auto; /* Center the container */
+}
+.main-section {
+   width: 85%; /* Set to your desired width */
+   margin: 0 auto; /* Center the container */
+}
+
+html, body {
+  resize: none;
+  touch-action: none; /* Prevents pinch-to-zoom on touch devices */
+}
+
+.uwu{
+    position: absolute;
+        top: 506px;
+        left: 7px;
+    }
+</style>
+
+    <body>
+        {% include 'Sites/navbar.html' %}
+        
+        <form method="POST">
+        {% csrf_token %}
+        <div class="profile-page-this">
+            <header class="header">
+               
+                <div class="background"><img class="image" src="{% static 'img/frierenbanner.png' %}" /></div>
+            </header>
+            <div class="main-section">
+                
+                <div class="main-card">
+                    <div class="overlap-group-wrapper">
+                        <div class="overlap-group">
+                            <img class="img" src="{% static 'img/frieren1.png' %}" />
+                            <p class="element">
+                                <a href="https://twitter.com/84imaka03" target="_blank" rel="noopener noreferrer"
+                                    ><span class="text-wrapper">@84imaka03<br /></span>
+                                </a>
+                                <span class="span"><br /></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        
+                
+                        <div class="div">Username</div>
+                        {{form.username}}
+                        
+                        <div class="text-wrapper-2">Email</div>
+                        {{form.email}}
+                        <div class="text-wrapper-3">Password</div>
+                        <a class="uwu btn btn-primary" href="{% url 'password_change' pk=user.pk %}" style="text-decoration:none" role="button">Click here to reset password</a>
+
+                        <div class="text-wrapper-4">First Name</div>
+                        {{form.first_name}}
+
+                        <div class="text-wrapper-5">Last Name</div>
+                        {{form.last_name}}
+
+                        <div class="text">{{user.username}}</div>
+
+                        <div class="text-2">Unit [{{user.HouseUnit}}] </div>
+
+
+                        <div class="text-3">Profile</div>
+
+                    </div>
+
+                    <img class="separator" src="img/separator.svg" />
+
+                    
+            
+ 
+                    <button class="save btn btn-outline-secondary btn-secondary" type="submit">
+                        <div class="text-wrapper-6" href="#" style="text-decoration:none" role="button">Save</div>
+                    </button>
+
+                    <!-- <button type="button" class="btn btn-outline-primary">Primary</button> -->
+                </div>
+            </div>
+
+        </div>
+        </form>
+        <br/>
+        
+        
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            let alert_list = document.querySelectorAll('.alert')
+            alert_list.forEach(function(alert) {
+                new bootstrap.Alert(alert);
+
+                let alert_timeout = alert.getAttribute('data-timeout');
+                setTimeout(() => {
+                    bootstrap.Alert.getInstance(alert).close();
+                }, +alert_timeout);
+            });
+        </script>
+    </body>
+</html>
+

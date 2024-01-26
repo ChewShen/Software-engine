@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'ForgetPassStyle.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+    html,
+    body {
+        resize: none;
+        touch-action: none;
+        /* Prevents pinch-to-zoom on touch devices */
+    }
+
+    .password {
+        width: 100%;
+        /* Set to your desired width */
+        
+    }
+
+    .forgot-password {
+        width: 100%;
+        /* Set to your desired width */
+        
+    }
+
+    
+
+    
+
+</style>
+
+<body>
+    {% include 'Sites/navbar.html' %}
+     
+    <form method="post">
+    {% csrf_token %}
+     <div class="forgot-password">
+        <div class="overlap-wrapper">
+            <div class="overlap">
+                <div class="password">
+                    <div class="text-wrapper">New Password</div>
+                    <p class="div">Why u resetting ur password haiya</p>
+                    <div class="frame">
+                        <div class="frame-2">
+                            <div class="contact-person">Enter old password</div>
+                            {{form.old_password}}
+                        </div>
+
+                        <div class="frame-2">
+                            <div class="contact-person">Enter new password</div>
+                            {{form.new_password1}}
+                        </div>
+
+                        <div class="frame-2">
+                            <div class="contact-person-2">Confirm password</div>
+                            {{form.new_password2}}
+                        </div>
+
+                        <button class="btn btn-primary button">
+                            <div class="send-mail">UPDATE PASSWORD</div>
+                        </button>
+                    </div>
+                    
+                    <img class="image" src="{% static 'img/gura/gura1.png' %}" />
+                    <img class="img" src="{% static 'img/gura/gura2.png' %}" />
+                    <div class="overlap-group">
+                        <img class="image-2" src="{% static 'img/gura/gura4.png' %}" />
+                         <img class="image-3" src="{% static 'img/gura/gura3.png' %}" />
+                    </div>
+                    <img class="image-4" src="{% static 'img/gura/gura5.png' %}" />
+                    <img class="image-5" src="{% static 'img/gura/gura6.png' %}" />
+                </div>
+                <a href="https://twitter.com/lokyinhouse" target="_blank" rel="noopener noreferrer">
+                    <div class="text-wrapper-2">@okyinhouse</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

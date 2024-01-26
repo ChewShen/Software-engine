@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'ResidentRegisterStyle.css' %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    #overlay-alert-container {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    pointer-events: none; 
+    }
+
+    .alert {
+        pointer-events: auto;
+    }
+</style>
+
+    <body>
+        {% include 'Sites\navbar.html' %}
+        {% if messages %}
+            <div id="overlay-alert-container">
+                {% for message in messages %}
+                    <div class="alert alert-danger alert-dismissible fade show" data-timeout="4000" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}                                                                    
+
+        <form action="/AllUsers/RegisterUser" method="post">
+        {% csrf_token %}
+        <div class="sign-up">                       
+            <div class="div">
+                <div class="text-wrapper">Account Registration</div>
+                <a href='/home' style="text-decoration:none" class="text-wrapper-3">Back</a>
+
+                <a href="/home">
+                    <img class="icon-navigation" src="{%static 'img/arrow_back.svg' %}" />
+                </a>
+
+                <div class="text-wrapper-4">Username*</div>
+                <input class="rectangle" type="text" autocomplete="off" id="username" name="username" placeholder= "Username" required/>
+
+                <div class="text-wrapper-5">First name</div>
+                <input class="rectangle-2" type="text" autocomplete="off" id="first_name" name="first_name" placeholder="First Name" required/>
+
+                <div class="text-wrapper-6">Last name</div>
+                <input class="rectangle-3" type="text" autocomplete="off" id="last_name" name="last_name" placeholder="Last Name" required/>
+
+                <div class="text-wrapper-7">Email*</div>
+                <input class="rectangle-4" type="email" autocomplete="off" id="email" name="email" placeholder="Email" required/>
+
+                <div class="text-wrapper-8">Password*</div>
+                <input class="rectangle-5" type="text" autocomplete="off" id="password1" name="password1" placeholder="Password" required/>
+
+                <div class="text-wrapper-9">Password (Confirmation)*</div>
+                <input class="rectangle-6" type="text" autocomplete="off" id="password2" name="password2" placeholder="Password confirmation" required/>
+
+                <!-- <p class="i-agree-to-terms">I agree to terms &amp; conditions</p> -->
+
+                <!-- <div class="overlap-group"><div class="ellipse"></div></div> -->
+                <div class="by-wrapper">
+                    <p class="by">
+                        <span class="span">By: </span>
+                        <a href="https://twitter.com/netural1175" target="_blank" rel="noopener noreferrer"
+                            ><span class="text-wrapper-10">@netural1175</span></a
+                        >
+                    </p>
+                </div>
+
+                <button class="overlap btn btn-primary" type="submit">
+                    <a class="text-wrapper-2" href="#" style="text-decoration:none" role="button">Register Account</a>
+                </button>
+            </div>
+        </div>
+
+
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            let alert_list = document.querySelectorAll('.alert')
+            alert_list.forEach(function(alert) {
+                new bootstrap.Alert(alert);
+
+                let alert_timeout = alert.getAttribute('data-timeout');
+                setTimeout(() => {
+                    bootstrap.Alert.getInstance(alert).close();
+                }, +alert_timeout);
+            });
+        </script>
+    </body>
+</html>

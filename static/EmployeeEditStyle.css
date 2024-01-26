@@ -1,0 +1,803 @@
+.profile-page {
+    display: inline-flex;
+    flex-direction: column;
+    
+    width: 1520px;
+    /* align-items: center; */
+    position: absolute;
+    background-color: #ffffff;
+}
+
+.profile-page .header {
+    position: absolute;
+    width: 1520px;
+    height: 586px;
+    background-image: url(./img/gura/guraback2.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.profile-page .main-section {
+    position: absolute;
+    top: 404px;
+    left: 10px; 
+    /* right: 25px; */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    
+}
+
+.profile-page .main-card {
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+}
+
+.profile-page .background {
+    position: relative;
+    width: 1498px;
+    height: 762px;
+    margin-right: -2px;
+}
+
+.profile-page .overlap-group {
+    position: relative;
+    width: 1496px;
+    height: 697px;
+    top: 65px;
+    background-color: var(--colorwhite);
+    border-radius: 25px;
+    box-shadow: var(--shadow-card);
+}
+
+.profile-page .image {
+    position: absolute;
+    width: 673px;
+    height: 697px;
+    top: 0;
+    left: 823px;
+    object-fit: cover;
+}
+
+.profile-page .lokyinhouse {
+    position: absolute;
+    width: 75px;
+    top: 659px;
+    left: 1405px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .text-wrapper {
+    text-decoration: underline;
+}
+
+.profile-page .span {
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 10px;
+    letter-spacing: 0;
+}
+
+.profile-page .profile-details {
+    position: absolute;
+    width: 669px;
+    height: 563px;
+    top: 86px;
+    left: 36px;
+}
+
+.profile-page .rectangle {
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    top: 506px;
+    left: 7px;
+    background-color: var(--colorwhite);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 1px 0px #00000005, 0px 1px 3px #32325d26;
+}
+
+.profile-page .div {
+    position: absolute;
+    width: 129px;
+    height: 32px;
+    top: 173px;
+    left: 8px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .rectangle-Rlname {
+    top: 309px;
+    left: 344px;
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    background-color: var(--colorwhite);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 1px 0px #00000005, 0px 1px 3px #32325d26;
+}
+
+.profile-page .text-wrapper-2 {
+    position: absolute;
+    width: 69px;
+    height: 32px;
+    top: 377px;
+    left: 8px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .rectangle-Rusername {
+    top: 207px;
+    left: 7px;
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    background-color: var(--colorwhite);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 1px 0px #00000005, 0px 1px 3px #32325d26;
+}
+
+.profile-page .text-wrapper-3 {
+    position: absolute;
+    width: 121px;
+    height: 32px;
+    top: 472px;
+    left: 8px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .rectangle-Remail {
+    top: 411px;
+    left: 7px;
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    background-color: var(--colorwhite);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 1px 0px #00000005, 0px 1px 3px #32325d26;
+}
+
+.profile-page .text-wrapper-4 {
+    position: absolute;
+    width: 134px;
+    height: 32px;
+    top: 268px;
+    left: 8px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .rectangle-Rfname {
+    top: 309px;
+    left: 7px;
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    background-color: var(--colorwhite);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 1px 0px #00000005, 0px 1px 3px #32325d26;
+}
+
+.profile-page .text-wrapper-5 {
+    position: absolute;
+    width: 131px;
+    height: 32px;
+    top: 268px;
+    left: 345px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .text {
+    position: absolute;
+    width: 402px;
+    height: 51px;
+    top: 0;
+    left: 0;
+    font-family: "Poppins-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: var(--text-colorgrey-dark);
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.profile-page .text-2 {
+    top: 51px;
+    font-size: 32px;
+    position: absolute;
+    width: 474px;
+    height: 29px;
+    left: 0;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--text-colorblue-grey);
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.profile-page .text-3 {
+    top: 105px;
+    text-shadow: 0px 4px 4px #00000040;
+    font-size: 40px;
+    position: absolute;
+    width: 474px;
+    height: 29px;
+    left: 0;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--text-colorblue-grey);
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.profile-page .separator {
+    position: absolute;
+    width: 774px;
+    height: 3px;
+    top: 178px;
+    left: 34px;
+}
+
+.profile-page .save {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 696px;
+    left: 311px;
+    background-color: #a1a1f5;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.profile-page .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+:root {
+    --colorpure-black: rgba(0, 0, 0, 1);
+    --colordark: rgba(33, 37, 41, 1);
+    --colordark-charcoal: rgba(51, 51, 51, 1);
+    --colorblue-grey: rgba(82, 95, 127, 1);
+    --coloryellow: rgba(255, 214, 0, 1);
+    --colorlight: rgba(206, 212, 218, 1);
+    --colorlighter: rgba(233, 236, 239, 1);
+    --colorwhite: rgba(255, 255, 255, 1);
+    --colorwhite-85: rgba(255, 255, 255, 0.85);
+    --colorwhite-50: rgba(255, 255, 255, 0.5);
+    --colorwhite-40: rgba(255, 255, 255, 0.4);
+    --colorwhite-30: rgba(255, 255, 255, 0.3);
+    --colorwhite-15: rgba(255, 255, 255, 0.15);
+    --colorwhite-10: rgba(255, 255, 255, 0.1);
+    --colorwhite-5: rgba(255, 255, 255, 0.05);
+    --colortransparent: rgba(255, 255, 255, 0);
+    --colorprimaryactive: rgba(50, 76, 221, 1);
+    --colorprimarydefault: rgba(94, 114, 228, 1);
+    --colorprimarydefault-65: rgba(94, 114, 228, 0.65);
+    --colorprimarydefault-50: rgba(94, 114, 228, 0.5);
+    --colorprimarydisabled: rgba(94, 114, 228, 0.65);
+    --colorprimaryhover: rgba(61, 85, 223, 1);
+    --colorprimaryicon-shape: rgba(138, 152, 235, 0.5);
+    --colorinfoactive: rgba(13, 165, 192, 1);
+    --colorinfodefault: rgba(17, 205, 239, 1);
+    --colorinfodefault-alert: rgba(55, 213, 242, 1);
+    --colorinfodefault-toast: rgba(17, 205, 239, 0.85);
+    --colorinfohover: rgba(14, 175, 204, 1);
+    --colorinfoicon-shape: rgba(65, 215, 242, 0.5);
+    --colorsuccessactive: rgba(36, 164, 109, 1);
+    --colorsuccessdefault: rgba(45, 206, 137, 1);
+    --colorsuccessdefault-alert: rgba(79, 214, 156, 1);
+    --colorsuccesshover: rgba(38, 175, 116, 1);
+    --colorsuccessicon-shape: rgba(84, 218, 161, 0.5);
+    --colordangeractive: rgba(236, 12, 56, 1);
+    --colordangerdefault: rgba(245, 54, 92, 1);
+    --colordangerdefault-alert: rgba(247, 86, 118, 1);
+    --colordangericon-shape: rgba(247, 103, 131, 0.5);
+    --colorwarningactive: rgba(250, 58, 14, 1);
+    --colorwarningdefault: rgba(251, 99, 64, 1);
+    --colorwarningdefault-alert: rgba(252, 124, 95, 1);
+    --colorwarningdefault-toast: rgba(251, 99, 64, 0.85);
+    --colorwarninghover: rgba(250, 68, 27, 1);
+    --colorwarningicon-shape: rgba(252, 140, 115, 0.5);
+    --colordefaultactive: rgba(11, 21, 38, 1);
+    --colordefaultdefault: rgba(23, 43, 77, 1);
+    --colordefaulthover: rgba(14, 27, 48, 1);
+    --colorsecondaryactive: rgba(214, 218, 226, 1);
+    --colorsecondarydefault: rgba(244, 245, 247, 1);
+    --colorsecondaryhover: rgba(222, 225, 231, 1);
+    --color-borderprimaryactive: rgba(39, 66, 219, 1);
+    --color-borderprimarydefault: rgba(94, 114, 228, 1);
+    --color-borderprimaryhover: rgba(50, 76, 221, 1);
+    --color-borderinfoactive: rgba(12, 154, 180, 1);
+    --color-borderinfodefault: rgba(17, 205, 239, 1);
+    --color-borderinfohover: rgba(13, 165, 192, 1);
+    --color-bordersuccessactive: rgba(34, 154, 102, 1);
+    --color-bordersuccessdefault: rgba(45, 206, 137, 1);
+    --color-bordersuccesshover: rgba(36, 164, 109, 1);
+    --color-borderdangeractive: rgba(224, 11, 54, 1);
+    --color-borderdangerdefault: rgba(245, 54, 92, 1);
+    --color-borderdangerhover: rgba(236, 12, 56, 1);
+    --color-borderwarningactive: rgba(246, 50, 5, 1);
+    --color-borderwarningdefault: rgba(251, 99, 64, 1);
+    --color-borderwarninghover: rgba(250, 58, 14, 1);
+    --color-borderdefaultactive: rgba(8, 16, 28, 1);
+    --color-borderdefaultdefault: rgba(23, 43, 77, 1);
+    --color-borderdefaulthover: rgba(11, 21, 38, 1);
+    --color-bordersecondaryactive: rgba(207, 211, 220, 1);
+    --color-bordersecondarydefault: rgba(244, 245, 247, 1);
+    --color-bordersecondaryhover: rgba(214, 218, 226, 1);
+    --color-outlineprimary: rgba(94, 114, 228, 1);
+    --color-outlineinfo: rgba(17, 205, 239, 1);
+    --color-outlinesuccess: rgba(45, 206, 137, 1);
+    --color-outlinedanger: rgba(245, 54, 92, 1);
+    --color-outlinewarning: rgba(251, 99, 64, 1);
+    --color-outlinedefault: rgba(23, 43, 77, 1);
+    --color-outlinesecondary: rgba(244, 245, 247, 1);
+    --color-outlinewhite: rgba(255, 255, 255, 1);
+    --social-colorfacebookactive: rgba(45, 68, 116, 1);
+    --social-colorfacebookdefault: rgba(59, 89, 153, 1);
+    --social-colorfacebookhover: rgba(52, 78, 133, 1);
+    --social-colortwitteractive: rgba(12, 133, 208, 1);
+    --social-colortwitterdefault: rgba(29, 161, 242, 1);
+    --social-colortwitterhover: rgba(13, 149, 232, 1);
+    --social-colorinstagramactive: rgba(211, 30, 64, 1);
+    --social-colorinstagramdefault: rgba(228, 64, 95, 1);
+    --social-colorinstagramhover: rgba(224, 37, 73, 1);
+    --social-colorgithubactive: rgba(9, 9, 9, 1);
+    --social-colorgithubdefault: rgba(34, 34, 34, 1);
+    --social-colorgithubhover: rgba(19, 19, 19, 1);
+    --social-colorpinterestactive: rgba(140, 6, 21, 1);
+    --social-colorpinterestdefault: rgba(189, 8, 28, 1);
+    --social-colorpinteresthover: rgba(160, 7, 24, 1);
+    --social-coloryoutubeactive: rgba(161, 25, 24, 1);
+    --social-coloryoutubedefault: rgba(205, 32, 31, 1);
+    --social-coloryoutubehover: rgba(178, 28, 27, 1);
+    --social-colorvimeodefault: rgba(26, 183, 234, 1);
+    --social-colorvimeohover: rgba(19, 163, 210, 1);
+    --social-colorslackactive: rgba(45, 137, 104, 1);
+    --social-colorslackdefault: rgba(58, 175, 133, 1);
+    --social-colorslackhover: rgba(50, 152, 116, 1);
+    --social-colordribbleactive: rgba(229, 30, 107, 1);
+    --social-colordribbledefault: rgba(234, 76, 137, 1);
+    --social-colordribblehover: rgba(231, 49, 119, 1);
+    --social-colorredditdefault: rgba(255, 69, 0, 1);
+    --social-colorreddithover: rgba(224, 61, 0, 1);
+    --social-colortumblrdefault: rgba(53, 70, 92, 1);
+    --social-colortumblrhover: rgba(42, 55, 73, 1);
+    --social-colorlinkedindefault: rgba(0, 119, 181, 1);
+    --social-colorlinkedinhover: rgba(0, 102, 156, 1);
+    --social-color-borderfacebook: rgba(59, 89, 153, 1);
+    --social-color-bordertwitter: rgba(29, 161, 242, 1);
+    --social-color-borderinstagram: rgba(228, 64, 95, 1);
+    --social-color-bordergithub: rgba(34, 34, 34, 1);
+    --social-color-borderpinterest: rgba(189, 8, 28, 1);
+    --social-color-borderyoutube: rgba(205, 32, 31, 1);
+    --social-color-borderslack: rgba(58, 175, 133, 1);
+    --social-color-borderdribble: rgba(234, 76, 137, 1);
+    --text-colorpure-black: rgba(0, 0, 0, 1);
+    --text-colordark: rgba(33, 37, 41, 1);
+    --text-colordark-charcoal: rgba(51, 51, 51, 1);
+    --text-colordefault: rgba(23, 43, 77, 1);
+    --text-colorgrey-dark: rgba(50, 50, 93, 1);
+    --text-colorblue-grey: rgba(82, 95, 127, 1);
+    --text-colorblue-grey-50: rgba(82, 95, 127, 0.5);
+    --text-colorsonic-silver: rgba(117, 117, 117, 1);
+    --text-colorgrey: rgba(136, 152, 170, 1);
+    --text-colorlight: rgba(173, 181, 189, 1);
+    --text-colordisabled: rgba(206, 212, 218, 1);
+    --text-colorgrey85: rgba(217, 217, 217, 1);
+    --text-colorwhite: rgba(255, 255, 255, 1);
+    --text-colorwhite-95: rgba(255, 255, 255, 0.95);
+    --text-colorwhite-94: rgba(255, 255, 255, 0.94);
+    --text-colorwhite-80: rgba(255, 255, 255, 0.8);
+    --text-colorwhite-70: rgba(255, 255, 255, 0.7);
+    --text-colorwhite-65: rgba(255, 255, 255, 0.65);
+    --text-colorprimary: rgba(94, 114, 228, 1);
+    --text-colorprimary-hover: rgba(35, 61, 210, 1);
+    --text-colorinfo: rgba(17, 205, 239, 1);
+    --text-colorinfo-hover: rgba(11, 144, 168, 1);
+    --text-colorsuccess: rgba(45, 206, 137, 1);
+    --text-colorsucces-hover: rgba(31, 143, 95, 1);
+    --text-colordanger: rgba(245, 54, 92, 1);
+    --text-colordanger-hover: rgba(212, 11, 51, 1);
+    --text-colorwarning: rgba(251, 99, 64, 1);
+    --text-colorwarning-hover: rgba(234, 48, 5, 1);
+    --badges-10px-light-font-family: "OpenSans-Light", Helvetica;
+    --badges-10px-light-font-weight: 300;
+    --badges-10px-light-font-size: 10px;
+    --badges-10px-light-letter-spacing: 0px;
+    --badges-10px-light-line-height: normal;
+    --badges-10px-light-font-style: normal;
+    --badges-10px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --badges-10px-regular-font-weight: 400;
+    --badges-10px-regular-font-size: 10px;
+    --badges-10px-regular-letter-spacing: 0px;
+    --badges-10px-regular-line-height: normal;
+    --badges-10px-regular-font-style: normal;
+    --badges-10px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --badges-10px-semibold-font-weight: 600;
+    --badges-10px-semibold-font-size: 10px;
+    --badges-10px-semibold-letter-spacing: 0px;
+    --badges-10px-semibold-line-height: normal;
+    --badges-10px-semibold-font-style: normal;
+    --display-1-53px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --display-1-53px-semibold-font-weight: 600;
+    --display-1-53px-semibold-font-size: 53px;
+    --display-1-53px-semibold-letter-spacing: 0px;
+    --display-1-53px-semibold-line-height: normal;
+    --display-1-53px-semibold-font-style: normal;
+    --display-2-44px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --display-2-44px-semibold-font-weight: 600;
+    --display-2-44px-semibold-font-size: 44px;
+    --display-2-44px-semibold-letter-spacing: 0px;
+    --display-2-44px-semibold-line-height: normal;
+    --display-2-44px-semibold-font-style: normal;
+    --display-3-35px-light-font-family: "OpenSans-Light", Helvetica;
+    --display-3-35px-light-font-weight: 300;
+    --display-3-35px-light-font-size: 35px;
+    --display-3-35px-light-letter-spacing: 0px;
+    --display-3-35px-light-line-height: 44px;
+    --display-3-35px-light-font-style: normal;
+    --display-3-35px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --display-3-35px-semibold-font-weight: 600;
+    --display-3-35px-semibold-font-size: 35px;
+    --display-3-35px-semibold-letter-spacing: 0px;
+    --display-3-35px-semibold-line-height: normal;
+    --display-3-35px-semibold-font-style: normal;
+    --display-4-26px-light-font-family: "OpenSans-Light", Helvetica;
+    --display-4-26px-light-font-weight: 300;
+    --display-4-26px-light-font-size: 26.040000915527344px;
+    --display-4-26px-light-letter-spacing: 0px;
+    --display-4-26px-light-line-height: normal;
+    --display-4-26px-light-font-style: normal;
+    --display-4-26px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --display-4-26px-semibold-font-weight: 600;
+    --display-4-26px-semibold-font-size: 26.040000915527344px;
+    --display-4-26px-semibold-letter-spacing: 0px;
+    --display-4-26px-semibold-line-height: normal;
+    --display-4-26px-semibold-font-style: normal;
+    --h1-40px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --h1-40px-bold-font-weight: 700;
+    --h1-40px-bold-font-size: 40px;
+    --h1-40px-bold-letter-spacing: 0px;
+    --h1-40px-bold-line-height: normal;
+    --h1-40px-bold-font-style: normal;
+    --h1-40px-light-font-family: "OpenSans-Light", Helvetica;
+    --h1-40px-light-font-weight: 300;
+    --h1-40px-light-font-size: 40px;
+    --h1-40px-light-letter-spacing: 0px;
+    --h1-40px-light-line-height: normal;
+    --h1-40px-light-font-style: normal;
+    --h1-40px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h1-40px-regular-font-weight: 400;
+    --h1-40px-regular-font-size: 40px;
+    --h1-40px-regular-letter-spacing: 0px;
+    --h1-40px-regular-line-height: normal;
+    --h1-40px-regular-font-style: normal;
+    --h2-32px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --h2-32px-bold-font-weight: 700;
+    --h2-32px-bold-font-size: 32px;
+    --h2-32px-bold-letter-spacing: 0px;
+    --h2-32px-bold-line-height: normal;
+    --h2-32px-bold-font-style: normal;
+    --h2-32px-bold-0-3-font-family: "OpenSans-Bold", Helvetica;
+    --h2-32px-bold-0-3-font-weight: 700;
+    --h2-32px-bold-0-3-font-size: 32px;
+    --h2-32px-bold-0-3-letter-spacing: 0.30000001192092896px;
+    --h2-32px-bold-0-3-line-height: normal;
+    --h2-32px-bold-0-3-font-style: normal;
+    --h2-32px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h2-32px-regular-font-weight: 400;
+    --h2-32px-regular-font-size: 32px;
+    --h2-32px-regular-letter-spacing: 0px;
+    --h2-32px-regular-line-height: normal;
+    --h2-32px-regular-font-style: normal;
+    --h3-28px-light-font-family: "OpenSans-Light", Helvetica;
+    --h3-28px-light-font-weight: 300;
+    --h3-28px-light-font-size: 28px;
+    --h3-28px-light-letter-spacing: 0px;
+    --h3-28px-light-line-height: normal;
+    --h3-28px-light-font-style: normal;
+    --h3-28px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h3-28px-regular-font-weight: 400;
+    --h3-28px-regular-font-size: 28px;
+    --h3-28px-regular-letter-spacing: 0px;
+    --h3-28px-regular-line-height: normal;
+    --h3-28px-regular-font-style: normal;
+    --h4-24px-light-font-family: "OpenSans-Light", Helvetica;
+    --h4-24px-light-font-weight: 300;
+    --h4-24px-light-font-size: 24px;
+    --h4-24px-light-letter-spacing: 0px;
+    --h4-24px-light-line-height: normal;
+    --h4-24px-light-font-style: normal;
+    --h4-24px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h4-24px-regular-font-weight: 400;
+    --h4-24px-regular-font-size: 24px;
+    --h4-24px-regular-letter-spacing: 0px;
+    --h4-24px-regular-line-height: 28px;
+    --h4-24px-regular-font-style: normal;
+    --h4-24px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --h4-24px-semibold-font-weight: 600;
+    --h4-24px-semibold-font-size: 24px;
+    --h4-24px-semibold-letter-spacing: 0px;
+    --h4-24px-semibold-line-height: normal;
+    --h4-24px-semibold-font-style: normal;
+    --h5-20px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --h5-20px-bold-font-weight: 700;
+    --h5-20px-bold-font-size: 20px;
+    --h5-20px-bold-letter-spacing: 0px;
+    --h5-20px-bold-line-height: normal;
+    --h5-20px-bold-font-style: normal;
+    --h5-20px-light-font-family: "OpenSans-Light", Helvetica;
+    --h5-20px-light-font-weight: 300;
+    --h5-20px-light-font-size: 20px;
+    --h5-20px-light-letter-spacing: 0px;
+    --h5-20px-light-line-height: 34px;
+    --h5-20px-light-font-style: normal;
+    --h5-20px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h5-20px-regular-font-weight: 400;
+    --h5-20px-regular-font-size: 20px;
+    --h5-20px-regular-letter-spacing: 0px;
+    --h5-20px-regular-line-height: 22px;
+    --h5-20px-regular-font-style: normal;
+    --h5-20px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --h5-20px-semibold-font-weight: 600;
+    --h5-20px-semibold-font-size: 20px;
+    --h5-20px-semibold-letter-spacing: 0px;
+    --h5-20px-semibold-line-height: normal;
+    --h5-20px-semibold-font-style: normal;
+    --h6-16px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --h6-16px-bold-font-weight: 700;
+    --h6-16px-bold-font-size: 16px;
+    --h6-16px-bold-letter-spacing: 0px;
+    --h6-16px-bold-line-height: normal;
+    --h6-16px-bold-font-style: normal;
+    --h6-16px-extrabold-font-family: "OpenSans-ExtraBold", Helvetica;
+    --h6-16px-extrabold-font-weight: 800;
+    --h6-16px-extrabold-font-size: 16px;
+    --h6-16px-extrabold-letter-spacing: 0px;
+    --h6-16px-extrabold-line-height: normal;
+    --h6-16px-extrabold-font-style: normal;
+    --h6-16px-light-font-family: "OpenSans-Light", Helvetica;
+    --h6-16px-light-font-weight: 300;
+    --h6-16px-light-font-size: 16px;
+    --h6-16px-light-letter-spacing: 0px;
+    --h6-16px-light-line-height: 27px;
+    --h6-16px-light-font-style: normal;
+    --h6-16px-regular-0-3-font-family: "OpenSans-Regular", Helvetica;
+    --h6-16px-regular-0-3-font-weight: 400;
+    --h6-16px-regular-0-3-font-size: 16px;
+    --h6-16px-regular-0-3-letter-spacing: -0.30000001192092896px;
+    --h6-16px-regular-0-3-line-height: normal;
+    --h6-16px-regular-0-3-font-style: normal;
+    --h6-16px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h6-16px-regular-font-weight: 400;
+    --h6-16px-regular-font-size: 16px;
+    --h6-16px-regular-letter-spacing: 0px;
+    --h6-16px-regular-line-height: normal;
+    --h6-16px-regular-font-style: normal;
+    --h6-16px-regular-0-4-font-family: "OpenSans-Regular", Helvetica;
+    --h6-16px-regular-0-4-font-weight: 400;
+    --h6-16px-regular-0-4-font-size: 15.199999809265137px;
+    --h6-16px-regular-0-4-letter-spacing: 0.4000000059604645px;
+    --h6-16px-regular-0-4-line-height: normal;
+    --h6-16px-regular-0-4-font-style: normal;
+    --h6-16px-semibold-0-3-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-16px-semibold-0-3-font-weight: 600;
+    --h6-16px-semibold-0-3-font-size: 16px;
+    --h6-16px-semibold-0-3-letter-spacing: -0.30000001192092896px;
+    --h6-16px-semibold-0-3-line-height: normal;
+    --h6-16px-semibold-0-3-font-style: normal;
+    --h6-16px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-16px-semibold-font-weight: 600;
+    --h6-16px-semibold-font-size: 16px;
+    --h6-16px-semibold-letter-spacing: 0px;
+    --h6-16px-semibold-line-height: normal;
+    --h6-16px-semibold-font-style: normal;
+    --h6-16px-semibold-0-4-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-16px-semibold-0-4-font-weight: 600;
+    --h6-16px-semibold-0-4-font-size: 16px;
+    --h6-16px-semibold-0-4-letter-spacing: 0.4000000059604645px;
+    --h6-16px-semibold-0-4-line-height: normal;
+    --h6-16px-semibold-0-4-font-style: normal;
+    --h6-mobile-14px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --h6-mobile-14px-bold-font-weight: 700;
+    --h6-mobile-14px-bold-font-size: 14px;
+    --h6-mobile-14px-bold-letter-spacing: 0px;
+    --h6-mobile-14px-bold-line-height: normal;
+    --h6-mobile-14px-bold-font-style: normal;
+    --h6-mobile-14px-light-font-family: "OpenSans-Light", Helvetica;
+    --h6-mobile-14px-light-font-weight: 300;
+    --h6-mobile-14px-light-font-size: 14px;
+    --h6-mobile-14px-light-letter-spacing: 0px;
+    --h6-mobile-14px-light-line-height: 22px;
+    --h6-mobile-14px-light-font-style: normal;
+    --h6-mobile-14px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h6-mobile-14px-regular-font-weight: 400;
+    --h6-mobile-14px-regular-font-size: 14px;
+    --h6-mobile-14px-regular-letter-spacing: 0px;
+    --h6-mobile-14px-regular-line-height: 21px;
+    --h6-mobile-14px-regular-font-style: normal;
+    --h6-mobile-14px-regular-0-2-font-family: "OpenSans-Regular", Helvetica;
+    --h6-mobile-14px-regular-0-2-font-weight: 400;
+    --h6-mobile-14px-regular-0-2-font-size: 14px;
+    --h6-mobile-14px-regular-0-2-letter-spacing: 0.20000000298023224px;
+    --h6-mobile-14px-regular-0-2-line-height: normal;
+    --h6-mobile-14px-regular-0-2-font-style: normal;
+    --h6-mobile-14px-semibold-0-3-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-mobile-14px-semibold-0-3-font-weight: 600;
+    --h6-mobile-14px-semibold-0-3-font-size: 14px;
+    --h6-mobile-14px-semibold-0-3-letter-spacing: 0.30000001192092896px;
+    --h6-mobile-14px-semibold-0-3-line-height: normal;
+    --h6-mobile-14px-semibold-0-3-font-style: normal;
+    --h6-mobile-14px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-mobile-14px-semibold-font-weight: 600;
+    --h6-mobile-14px-semibold-font-size: 14px;
+    --h6-mobile-14px-semibold-letter-spacing: 0px;
+    --h6-mobile-14px-semibold-line-height: normal;
+    --h6-mobile-14px-semibold-font-style: normal;
+    --h6-mobile-14px-semibold-0-4-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-mobile-14px-semibold-0-4-font-weight: 600;
+    --h6-mobile-14px-semibold-0-4-font-size: 14px;
+    --h6-mobile-14px-semibold-0-4-letter-spacing: 0.4000000059604645px;
+    --h6-mobile-14px-semibold-0-4-line-height: normal;
+    --h6-mobile-14px-semibold-0-4-font-style: normal;
+    --h6-small-13px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --h6-small-13px-bold-font-weight: 700;
+    --h6-small-13px-bold-font-size: 13px;
+    --h6-small-13px-bold-letter-spacing: 0px;
+    --h6-small-13px-bold-line-height: normal;
+    --h6-small-13px-bold-font-style: normal;
+    --h6-small-13px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --h6-small-13px-regular-font-weight: 400;
+    --h6-small-13px-regular-font-size: 13px;
+    --h6-small-13px-regular-letter-spacing: 0px;
+    --h6-small-13px-regular-line-height: normal;
+    --h6-small-13px-regular-font-style: normal;
+    --h6-small-13px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --h6-small-13px-semibold-font-weight: 600;
+    --h6-small-13px-semibold-font-size: 13px;
+    --h6-small-13px-semibold-letter-spacing: 0px;
+    --h6-small-13px-semibold-line-height: normal;
+    --h6-small-13px-semibold-font-style: normal;
+    --heading-15px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --heading-15px-regular-font-weight: 400;
+    --heading-15px-regular-font-size: 15px;
+    --heading-15px-regular-letter-spacing: 0px;
+    --heading-15px-regular-line-height: normal;
+    --heading-15px-regular-font-style: normal;
+    --heading-15px-regular-0-4-font-family: "OpenSans-Regular", Helvetica;
+    --heading-15px-regular-0-4-font-weight: 400;
+    --heading-15px-regular-0-4-font-size: 15.199999809265137px;
+    --heading-15px-regular-0-4-letter-spacing: 0.4000000059604645px;
+    --heading-15px-regular-0-4-line-height: normal;
+    --heading-15px-regular-0-4-font-style: normal;
+    --heading-title-22px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --heading-title-22px-semibold-font-weight: 600;
+    --heading-title-22px-semibold-font-size: 22px;
+    --heading-title-22px-semibold-letter-spacing: 0px;
+    --heading-title-22px-semibold-line-height: normal;
+    --heading-title-22px-semibold-font-style: normal;
+    --label-12px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --label-12px-regular-font-weight: 400;
+    --label-12px-regular-font-size: 12px;
+    --label-12px-regular-letter-spacing: 0px;
+    --label-12px-regular-line-height: 24px;
+    --label-12px-regular-font-style: normal;
+    --label-12px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --label-12px-semibold-font-weight: 600;
+    --label-12px-semibold-font-size: 12px;
+    --label-12px-semibold-letter-spacing: 0px;
+    --label-12px-semibold-line-height: normal;
+    --label-12px-semibold-font-style: normal;
+    --label-12px-semibold-0-2-font-family: "OpenSans-SemiBold", Helvetica;
+    --label-12px-semibold-0-2-font-weight: 600;
+    --label-12px-semibold-0-2-font-size: 12px;
+    --label-12px-semibold-0-2-letter-spacing: 0.20000000298023224px;
+    --label-12px-semibold-0-2-line-height: normal;
+    --label-12px-semibold-0-2-font-style: normal;
+    --label-12px-semibold-0-3-font-family: "OpenSans-SemiBold", Helvetica;
+    --label-12px-semibold-0-3-font-weight: 600;
+    --label-12px-semibold-0-3-font-size: 12px;
+    --label-12px-semibold-0-3-letter-spacing: 0.30000001192092896px;
+    --label-12px-semibold-0-3-line-height: normal;
+    --label-12px-semibold-0-3-font-style: normal;
+    --paragraph-18px-bold-font-family: "OpenSans-Bold", Helvetica;
+    --paragraph-18px-bold-font-weight: 700;
+    --paragraph-18px-bold-font-size: 18px;
+    --paragraph-18px-bold-letter-spacing: 0px;
+    --paragraph-18px-bold-line-height: normal;
+    --paragraph-18px-bold-font-style: normal;
+    --paragraph-18px-light-font-family: "OpenSans-Light", Helvetica;
+    --paragraph-18px-light-font-weight: 300;
+    --paragraph-18px-light-font-size: 18px;
+    --paragraph-18px-light-letter-spacing: 0px;
+    --paragraph-18px-light-line-height: 34px;
+    --paragraph-18px-light-font-style: normal;
+    --paragraph-18px-regular-font-family: "OpenSans-Regular", Helvetica;
+    --paragraph-18px-regular-font-weight: 400;
+    --paragraph-18px-regular-font-size: 18px;
+    --paragraph-18px-regular-letter-spacing: 0px;
+    --paragraph-18px-regular-line-height: 34px;
+    --paragraph-18px-regular-font-style: normal;
+    --paragraph-18px-semibold-font-family: "OpenSans-SemiBold", Helvetica;
+    --paragraph-18px-semibold-font-weight: 600;
+    --paragraph-18px-semibold-font-size: 18px;
+    --paragraph-18px-semibold-letter-spacing: 0px;
+    --paragraph-18px-semibold-line-height: normal;
+    --paragraph-18px-semibold-font-style: normal;
+    --shadow-default: 0px 1px 3px 0px rgba(0, 0, 0, 0.08), 0px 4px 6px 0px rgba(50, 50, 93, 0.11);
+    --shadow-hover: 0px 3px 6px 0px rgba(0, 0, 0, 0.08), 0px 7px 14px 0px rgba(50, 50, 93, 0.1);
+    --shadow-card: 0px 5px 15px 0px rgba(0, 0, 0, 0.07), 0px 15px 35px 0px rgba(50, 50, 93, 0.1);
+    --shadow-card-image: 0px 8px 10px 0px rgba(0, 0, 0, 0.2), 0px 5px 15px 0px rgba(0, 0, 0, 0.24);
+    --shadow-choices-list: 0px 5px 15px 0px rgba(0, 0, 0, 0.1), 0px 15px 35px 0px rgba(50, 50, 93, 0.15),
+        0px 50px 100px 0px rgba(50, 50, 93, 0.1);
+    --shadow-button-active: 0px 3px 6px 0px rgba(0, 0, 0, 0.08), 0px 7px 14px 0px rgba(50, 50, 93, 0.1);
+    --shadow-large: 0px 16px 48px 0px rgba(0, 0, 0, 0.18);
+    --shadow-popover: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    --shadow-progress-bar: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+    --shadow-primary-default: 13px 13px 50px 0px rgba(94, 114, 228, 1);
+    --shadow-info-default: 13px 13px 50px 0px rgba(17, 205, 239, 1);
+    --shadow-success-default: 13px 13px 50px 0px rgba(45, 206, 137, 1);
+    --shadow-danger-default: 13px 13px 50px 0px rgba(245, 54, 92, 1);
+    --shadow-warning-default: 13px 13px 50px 0px rgba(251, 99, 64, 1);
+}

@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'signinStyle.css' %}" />
+  <link rel="stylesheet" href="{% static 'signinStyleGuide.css' %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+    .primary-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    position: relative;
+    background-color: var(--system-blue-007aff);
+    border-radius: 6px;
+}
+
+.primary-button .dis {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--button-label-font-family);
+    font-weight: var(--button-label-font-weight);
+    color: var(--white-ffffff);
+    font-size: var(--button-label-font-size);
+    text-align: center;
+    letter-spacing: var(--button-label-letter-spacing);
+    line-height: var(--button-label-line-height);
+    white-space: nowrap;
+    font-style: var(--button-label-font-style);
+}
+
+::placeholder{
+    text-align: center;
+    
+}
+
+
+:root {
+--system-blue-007aff: rgba(0, 122, 255, 1);
+--white-ffffff: rgba(255, 255, 255, 1);
+--button-label-font-family: "Roboto-Bold", Helvetica;
+--button-label-font-weight: 700;
+--button-label-font-size: 15px;
+--button-label-letter-spacing: 0.30000001192092896px;
+--button-label-line-height: 20px;
+--button-label-font-style: normal;
+}
+
+</style>
+
+    <body>
+        {% include 'Sites\navbar.html' %}
+        <form action="/AllUsers/signin" method="post">
+        {% csrf_token %}
+
+        <div class="sign-in-form-desktop">
+            <div class="overlap-group-wrapper">
+                <div class="overlap-group">
+                    <div class="div">
+                        <img class="image" src="{% static 'img/bigpomu.png' %}" />
+                        <div class="frame">
+                            <div class="frame-2">
+                                <div class="frame-3">
+                                    <div class="UI-unicorn-logo">
+                                        <!-- <img class="walfie-pomu" src="{% static 'img/walfie pomu 2.png' %}" /> -->
+                                        <img class="walfie-pomu" src="{% static 'img/pomudachi.gif' %}" />
+                                        <div class="text-wrapper">Hello</div>
+                                    </div>
+                                    <div class="BG-tab-switcher">
+                                        <div class="tab-switcher-button">
+                                            <div class="empty-wrapper"><div class="empty">Sign in</div></div>
+                                        </div>
+                                        <button class="frame-wrapper">
+                                            <div class="empty-wrapper"><div class="empty-2">Sign up</div></div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="sign-in-forms">
+                                    <div class="sign-in-form-web">
+                                        <div class="frame-4">
+                                            <div class="element">Loli requiem</div>
+                                            <div class="div-wrapper">
+                                                <div class="frame-5">
+                                                    <div class="input-configurator">
+                                                        <div class="input-configurator-2">
+                                                            <div class="satellite-input"><div class="hint">Login</div></div>
+                                                            <input class="regular-input-double-wrapper" type="text" autocomplete="off" id="username" name="username" placeholder=" Enter Username" required/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-configurator">
+                                                        <div class="input-configurator-2">
+                                                            <div class="satellite-input"><div class="hint">Password</div></div>
+                                                            <input class="regular-input-double-wrapper" type="password" autocomplete="off" id="pass" name="pass" placeholder="Enter Password" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <button class="primary-button btn btn-primary" type="submit">
+                                            <div class="dis" href="#" role="button">Sign in</div>
+                                        </button>
+
+                                        <div class="nav"></div>
+                                    </div>
+                                    <div class="sign-up-offer">
+                                        <div class="description">Dont have an account?</div>
+                                        <a href="RegisterUser" class="description-2">Sign up now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="image-by-gudanco">
+                        <span class="span">image by :&nbsp;&nbsp;@</span>
+                        <a href="https://twitter.com/gudanco" target="_blank" rel="noopener noreferrer"
+                            ><span class="text-wrapper-3">gudanco<br /></span
+                        ></a>
+                        <span class="span"><br /></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        </form>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+</head>
+
+
+<body>
+
+    {% include 'Sites\navbar.html' %}
+    <br />
+    <form method=POST action='SearchNotice' role="search">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Enter something" name="searched" aria-label="Search"
+            autocomplete="off"><br />
+        <button class="btn btn-outline-success" type="submit">Search</button><br />
+    </form>
+
+    <br/><form method=POST action='SearchNotice' role="search">
+        {% csrf_token %}
+        <input class="w-25 p-3" id="datepicker" type="text" placeholder="Choose a date" name="searched"
+            aria-label="Search" autocomplete="off"><br />
+        <br/><button class="btn btn-outline-success" type="submit">Search by Date</button><br/>
+    </form>
+
+    {%if searched %}
+    <br />
+    <h1>You Searched For [{{searched}}] </h1>
+
+    {% for NoticeTitle in notice %}
+    <div class="card">
+        <div class="card-header">Notice ID: {{NoticeTitle.NoticeBoardID}} </div>
+        <div class="card-body">
+            <h5 class="card-title">{{NoticeTitle}}</h5>
+            <p class="card-text"><br />
+                <strong>Detail: </strong>{{NoticeTitle.NoticeDescription}}<br />
+                <strong>Date: </strong>{{NoticeTitle.NoticeDate}}<br />
+                <strong>Time: </strong>{{NoticeTitle.NoticeTime}}<br />
+            </p>
+        </div>
+    </div>
+    <br />
+    {% endfor %}
+
+    
+    {% for NoticeDate in NoticeWithDate %}
+    <div class="card">
+        <div class="card-header">Notice ID: {{NoticeDate.NoticeBoardID}} </div>
+        <div class="card-body">
+            <h5 class="card-title">{{NoticeDate}}</h5>
+            <p class="card-text"><br />
+                <strong>Detail: </strong>{{NoticeDate.NoticeDescription}}<br />
+                <strong>Date: </strong>{{NoticeDate.NoticeDate}}<br />
+                <strong>Time: </strong>{{NoticeDate.NoticeTime}}<br />
+            </p>
+        </div>
+    </div>
+    <br />
+    {% endfor %}
+
+
+    
+    {% else %}
+        <center>
+            <h1>Showing all notices....</h1>
+        </center>
+    {% for announcement in notice_list%}
+    <br/>
+    <div class="card">
+        <div class="card-header">Notice ID: {{announcement.NoticeBoardID}} </div>
+        <div class="card-body">
+            <h5 class="card-title">{{announcement}}</h5>
+            <p class="card-text"><br />
+
+                <strong>Detail: </strong>{{announcement.NoticeDescription}}<br />
+                <strong>Date: </strong>{{announcement.NoticeDate}}<br />
+                <strong>Time: </strong>{{announcement.NoticeTime}}<br />
+            </p>
+        </div>
+    </div>
+    <br />
+    {% endfor %}
+
+    {% endif %}
+    <br/>
+    <center>
+        {% if user.role == 'Resident' %}
+        <div class="button">
+            <a href="/ResidentLanding" type="button" class="btn btn-outline-secondary" > Back </a></button>
+            </div>
+        {% elif user.role == 'Employee' %}
+        <div class="button">
+            <a href="/EmployeeLanding" type="button" class="btn btn-outline-secondary" > Back </a></button>
+            </div>
+        {% endif %}
+    </center>
+    <script src="" async defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'yy-mm', // Year and month format
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                onClose: function (dateText, inst) {
+                    $(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
+                }
+            }).focus(function () {
+                $('.ui-datepicker-calendar').hide(); // Hide the calendar
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="{% static 'RegisterFormstyle.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>                                                                                     
+    <body>
+        {% include 'Sites\navbar.html' %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if success_message %}
+        
+
+        {% else %}
+        <form action="{% url 'RegisterVisitor' %}" method="POST">
+        {% csrf_token %}
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+        <div class="master-components">
+            <div class="text-elements"><div class="text-wrapper">REGISTERATION</div></div>
+            <div class="div">
+                <div class="frame"><div class="text-wrapper-2">Form</div></div>
+                <div class="div-wrapper"><p class="p">Please complete the following question before enter</p></div>
+            </div>
+            
+            <div class="text-elements-2"><div class="text-wrapper-3">Car No. Plate</div></div>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name ="noPlate" required ></div>
+
+            <div class="text-wrapper-4">License Number</div>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name ="LicenseNum" required></div>
+
+            <div class="text-wrapper-4">Car Model</div>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name="CarModel" required></div>
+
+            <div class="text-wrapper-4">Phone Number</div>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name="PhoneNum" required></div>
+
+            <p class="date-and-time-yyyy">
+                <span class="span">Date and Time </span> <span class="text-wrapper-5">(yyyy-mm-dd)</span>
+            </p>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name ="DateTime" required></div>
+
+            <div class="text-wrapper-4">Amount of Car</div>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name="CarNum" required></div>
+
+            <div class="text-wrapper-4">Related House Unit</div>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name="HouseUnit" required></div>
+
+            <p class="text-wrapper-4">When are you expected to leave?</p>
+            <div class="input-rich-text-box"><input class="rectangle" autocomplete="off" name="leave" required></div>
+
+
+            <button type="submit" class="submit-wrapper">
+                <p class="submit"><span class="text-wrapper-6">Submit</span></p>
+            </button>
+
+        </div>
+    </form>
+    {% endif %}
+    <script src="" async defer></script>
+</body>
+
+</html>

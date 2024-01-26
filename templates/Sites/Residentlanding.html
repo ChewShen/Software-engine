@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'ResidentLandingStyle.css' %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+    #overlay-alert-container {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    pointer-events: none; 
+    }
+
+    .alert {
+        pointer-events: auto;
+    }
+</style>
+
+<body>
+    {% include 'Sites\navbar.html' %}
+    {% if messages %}
+    <div id="overlay-alert-container">
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success alert-dismissible fade show" data-timeout="4000" role="alert">
+                        <strong>Success:</strong> {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% elif message.tags == 'error' %}
+                    <div class="alert alert-danger alert-dismissible fade show"  data-timeout="4000" role="alert">
+                        <strong>Error:</strong> {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning alert-dismissible fade show" data-timeout="4000" role="alert">
+                        <strong>Warning:</strong> {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+        {% if user.is_authenticated %}
+        <div class="element">
+            <div class="overlap-group-wrapper">
+                <div class="overlap-group">
+                    <img class="hero-image-bg" src="{% static 'img/unsplash_1XLyzi17Z2M.png' %}" />
+
+                    <div class="images-bottom">
+                        <div class="frame-1">
+                            <div class="div-wrapper"><div class="text-wrapper">Stays</div></div>
+                        </div>
+                        <div class="frame-2">
+                            <div class="div-wrapper"><div class="text-wrapper">Flights</div></div>
+                        </div>
+                        <div class="frame-3">
+                            <div class="div-wrapper"><div class="text-wrapper">Cruises</div></div>
+                        </div>
+                        <div class="frame-4">
+                            <div class="div-wrapper"><div class="text-wrapper">Cars</div></div>
+                        </div>
+                        <div class="frame-5">
+                            <div class="div-wrapper"><div class="text-wrapper">Fun</div></div>
+                        </div>
+                        <div class="frame-6">
+                            <div class="div-wrapper"><div class="text-wrapper">Restaurants</div></div>
+                        </div>
+                    </div>
+
+                    <div class="conent">
+                        <a type="button" href="/NoticeBoard" class="btn btn-secondary text-wrapper-2 primary-button">View Notice</a>
+                
+                        <a type="button" href="/AllUsers/ResidentEdit" class="btn btn-secondary text-wrapper-2 primary-button">Manage Profile</a>
+                        <!-- <a type="button" href="#" class="btn btn-secondary text-wrapper-2 primary-button">Parking Management</a> -->
+                        <a type="button" href="#" class="btn btn-secondary text-wrapper-3 primary-button">Payment</a>
+                        <a type="button" href="/UserFeedback" class="btn btn-secondary text-wrapper-3 primary-button">Feedback</a>
+                    </div>
+                    <div class="title">
+                        <div class="travel-around-follow">Home Sweet Home, Welcome {{user}}</div><br/>
+                        <p class="p">
+                            The molds at the manufacturing plant at Lego are so precise and effective that just 18 out of 1 million are found to be defective.
+                            That's out of the 20 billion pieces that are manufactured every year!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/><br/>
+        </form>
+
+        {% else %}
+         <h1>Oi go log in first, NT</h1>
+        {% endif %}
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            let alert_list = document.querySelectorAll('.alert')
+            alert_list.forEach(function(alert) {
+                new bootstrap.Alert(alert);
+
+                let alert_timeout = alert.getAttribute('data-timeout');
+                setTimeout(() => {
+                    bootstrap.Alert.getInstance(alert).close();
+                }, +alert_timeout);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+.bulletin-board {
+    width: 6142px;
+    height: 4487px;
+}
+
+.bulletin-board .overlap-group {
+    position: relative;
+    height: 4487px;
+}
+
+.bulletin-board .cork {
+    position: absolute;
+    width: 5893px;
+    height: 4257px;
+    top: 133px;
+    left: 115px;
+}
+
+.bulletin-board .wood {
+    position: absolute;
+    width: 6137px;
+    height: 246px;
+    top: 0;
+    left: 0;
+}
+
+.bulletin-board .img {
+    position: absolute;
+    width: 6137px;
+    height: 246px;
+    top: 4241px;
+    left: 5px;
+}
+
+.bulletin-board .wood-2 {
+    position: absolute;
+    width: 246px;
+    height: 4487px;
+    top: 0;
+    left: 0;
+}
+
+.bulletin-board .wood-3 {
+    position: absolute;
+    width: 246px;
+    height: 4487px;
+    top: 0;
+    left: 5891px;
+}
