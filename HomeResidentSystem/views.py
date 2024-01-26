@@ -4,8 +4,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import RegisterVisitorForm, FeedbackForm, EmployeeScheduleForm
+from .forms import RegisterVisitorForm, FeedbackForm, EmployeeScheduleForm, NoticeBoard
 from .models import NoticeBoardModel, EmployeeScheduleModel
+from django.db.models import Q
+
 
 # from AllUsers.models import CustomUser
 # from AllUsers.forms import RegisterUserForm
@@ -37,12 +39,13 @@ def ResidentLanding(request):
     return render(request, "Sites/Residentlanding.html", {'user': user})
 
 def SearchNotice(request):
-    if request.method =="POST":
+    if request.method == "POST":
         searched = request.POST['searched']
-        notice = NoticeBoardModel.objects.filter(NoticeTitle__contains=searched)
+        notice = NoticeBoardModel.objects.filter(Q(NoticeTitle__contains=searched) | Q(NoticeImage__contains=searched))
         NoticeWithDate = NoticeBoardModel.objects.filter(NoticeDate__contains=searched)
         announcement = NoticeBoardModel.objects.all()
-        return render(request,"Sites/searchNotice.html",{'searched':searched,'NoticeWithDate':NoticeWithDate,'notice':notice,'notice_list' : announcement})
+        return render(request, "Sites/searchNotice.html", {'searched': searched, 'NoticeWithDate': NoticeWithDate, 'notice': notice, 'notice_list': announcement})
+
     else:
         return render(request,"Sites/searchNotice.html")
 
@@ -66,9 +69,15 @@ def home(request):
 
 def NoticeBoard(request):
         announcement = NoticeBoardModel.objects.all()
-        return render(request,'Sites/NoticeBoard.html',
-            {'notice_list' : announcement})
+        if request.method == "POST":
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Form submitted successfully!')
+                return redirect('/EmployeeLanding')  
+            else:
+                form = NoticeBoard()
 
+        return render(request,'Sites/NoticeBoard.html',{'notice_list' : announcement})
 
 def logoutUser(request):
     logout(request)

@@ -40,62 +40,72 @@ html, body {
 
     <body>
         {% include 'Sites/navbar.html' %}
+
+        {% if user.is_authenticated %}
+            {%if user.role == 'Resident' %}
         
-        <form method="POST">
-        {% csrf_token %}
-        <div class="profile-page-this">
-            <header class="header">
-               
-                <div class="background"><img class="image" src="{% static 'img/frierenbanner.png' %}" /></div>
-            </header>
-            <div class="main-section">
-                
-                <div class="main-card">
-                    <div class="overlap-group-wrapper">
-                        <div class="overlap-group">
-                            <img class="img" src="{% static 'img/frieren1.png' %}" />
-                            <p class="element">
-                                <a href="https://twitter.com/84imaka03" target="_blank" rel="noopener noreferrer"
-                                    ><span class="text-wrapper">@84imaka03<br /></span>
-                                </a>
-                                <span class="span"><br /></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="profile-details">
-                        
-                
-                        <div class="div">Username</div>
-                        {{form.username}}
-                        
-                        <div class="text-wrapper-2">Email</div>
-                        {{form.email}}
-                        <div class="text-wrapper-3">Password</div>
-                        <a class="uwu btn btn-primary" href="{% url 'password_change' pk=user.pk %}" style="text-decoration:none" role="button">Click here to reset password</a>
-
-                        <div class="text-wrapper-4">First Name</div>
-                        {{form.first_name}}
-
-                        <div class="text-wrapper-5">Last Name</div>
-                        {{form.last_name}}
-
-                        <div class="text">{{user.username}}</div>
-
-                        <div class="text-2">Unit [{{user.HouseUnit}}] </div>
-
-
-                        <div class="text-3">Profile</div>
-
-                    </div>
-
-                    <img class="separator" src="img/separator.svg" />
-
+                <form method="POST">
+                {% csrf_token %}
+                <div class="profile-page-this">
+                    <header class="header">
                     
+                        <div class="background"><img class="image" src="{% static 'img/frierenbanner.png' %}" /></div>
+                    </header>
+                    <div class="main-section">
+                        
+                        <div class="main-card">
+                            <div class="overlap-group-wrapper">
+                                <div class="overlap-group">
+                                    <img class="img" src="{% static 'img/frieren1.png' %}" />
+                                    <p class="element">
+                                        <a href="https://twitter.com/84imaka03" target="_blank" rel="noopener noreferrer"
+                                            ><span class="text-wrapper">@84imaka03<br /></span>
+                                        </a>
+                                        <span class="span"><br /></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="profile-details">
+                                
+                        
+                                <div class="div">Username</div>
+                                {{form.username}}
+                                
+                                <div class="text-wrapper-2">Email</div>
+                                {{form.email}}
+                                <div class="text-wrapper-3">Password</div>
+                                <a class="uwu btn btn-primary" href="{% url 'password_change' pk=user.pk %}" style="text-decoration:none" role="button">Click here to reset password</a>
+
+                                <div class="text-wrapper-4">First Name</div>
+                                {{form.first_name}}
+
+                                <div class="text-wrapper-5">Last Name</div>
+                                {{form.last_name}}
+
+                                <div class="text">{{user.username}}</div>
+
+                                <div class="text-2">Unit [{{user.HouseUnit}}] </div>
+
+
+                                <div class="text-3">Profile</div>
+
+                            </div>
+
+                            <img class="separator" src="img/separator.svg" />
+
+                            
+                    
+        
+                            <button class="save btn btn-outline-secondary btn-secondary" type="submit">
+                                <div class="text-wrapper-6" href="#" style="text-decoration:none" role="button">Save</div>
+                            </button>
+            {% else %}
+                <h1>try harder</h1>
+            {% endif %}
             
- 
-                    <button class="save btn btn-outline-secondary btn-secondary" type="submit">
-                        <div class="text-wrapper-6" href="#" style="text-decoration:none" role="button">Save</div>
-                    </button>
+        {% else %}
+            <h1>try harder</h1>
+        {% endif %}
 
                     <!-- <button type="button" class="btn btn-outline-primary">Primary</button> -->
                 </div>

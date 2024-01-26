@@ -33,6 +33,7 @@
 
 <body>
     {% include 'Sites\navbar.html' %}
+    
     {% if messages %}
     <div id="overlay-alert-container">
             {% for message in messages %}
@@ -58,53 +59,62 @@
 
 
         {% if user.is_authenticated %}
-        <div class="element">
-            <div class="overlap-group-wrapper">
-                <div class="overlap-group">
-                    <img class="hero-image-bg" src="{% static 'img/unsplash_1XLyzi17Z2M.png' %}" />
+        {% if user.is_authenticated %}
+            {%if user.role == 'Resident' %}
+                <div class="element">
+                    <div class="overlap-group-wrapper">
+                        <div class="overlap-group">
+                            <img class="hero-image-bg" src="{% static 'img/unsplash_1XLyzi17Z2M.png' %}" />
 
-                    <div class="images-bottom">
-                        <div class="frame-1">
-                            <div class="div-wrapper"><div class="text-wrapper">Stays</div></div>
-                        </div>
-                        <div class="frame-2">
-                            <div class="div-wrapper"><div class="text-wrapper">Flights</div></div>
-                        </div>
-                        <div class="frame-3">
-                            <div class="div-wrapper"><div class="text-wrapper">Cruises</div></div>
-                        </div>
-                        <div class="frame-4">
-                            <div class="div-wrapper"><div class="text-wrapper">Cars</div></div>
-                        </div>
-                        <div class="frame-5">
-                            <div class="div-wrapper"><div class="text-wrapper">Fun</div></div>
-                        </div>
-                        <div class="frame-6">
-                            <div class="div-wrapper"><div class="text-wrapper">Restaurants</div></div>
-                        </div>
-                    </div>
+                            <div class="images-bottom">
+                                <div class="frame-1">
+                                    <div class="div-wrapper"><div class="text-wrapper">Stays</div></div>
+                                </div>
+                                <div class="frame-2">
+                                    <div class="div-wrapper"><div class="text-wrapper">Flights</div></div>
+                                </div>
+                                <div class="frame-3">
+                                    <div class="div-wrapper"><div class="text-wrapper">Cruises</div></div>
+                                </div>
+                                <div class="frame-4">
+                                    <div class="div-wrapper"><div class="text-wrapper">Cars</div></div>
+                                </div>
+                                <div class="frame-5">
+                                    <div class="div-wrapper"><div class="text-wrapper">Fun</div></div>
+                                </div>
+                                <div class="frame-6">
+                                    <div class="div-wrapper"><div class="text-wrapper">Restaurants</div></div>
+                                </div>
+                            </div>
 
-                    <div class="conent">
-                        <a type="button" href="/NoticeBoard" class="btn btn-secondary text-wrapper-2 primary-button">View Notice</a>
-                
-                        <a type="button" href="/AllUsers/ResidentEdit" class="btn btn-secondary text-wrapper-2 primary-button">Manage Profile</a>
-                        <!-- <a type="button" href="#" class="btn btn-secondary text-wrapper-2 primary-button">Parking Management</a> -->
-                        <a type="button" href="#" class="btn btn-secondary text-wrapper-3 primary-button">Payment</a>
-                        <a type="button" href="/UserFeedback" class="btn btn-secondary text-wrapper-3 primary-button">Feedback</a>
-                    </div>
-                    <div class="title">
-                        <div class="travel-around-follow">Home Sweet Home, Welcome {{user}}</div><br/>
-                        <p class="p">
-                            The molds at the manufacturing plant at Lego are so precise and effective that just 18 out of 1 million are found to be defective.
-                            That's out of the 20 billion pieces that are manufactured every year!
-                        </p>
+                            <div class="conent">
+                                <a type="button" href="/NoticeBoard" class="btn btn-secondary text-wrapper-2 primary-button">View Notice</a>
+                        
+                                <a type="button" href="/AllUsers/ResidentEdit" class="btn btn-secondary text-wrapper-2 primary-button">Manage Profile</a>
+                                <!-- <a type="button" href="#" class="btn btn-secondary text-wrapper-2 primary-button">Parking Management</a> -->
+                                <a type="button" href="#" class="btn btn-secondary text-wrapper-3 primary-button">Payment</a>
+                                <a type="button" href="/UserFeedback" class="btn btn-secondary text-wrapper-3 primary-button">Feedback</a>
+                            </div>
+                            <div class="title">
+                                <div class="travel-around-follow">Home Sweet Home, Welcome {{user}}</div><br/>
+                                <p class="p">
+                                    The molds at the manufacturing plant at Lego are so precise and effective that just 18 out of 1 million are found to be defective.
+                                    That's out of the 20 billion pieces that are manufactured every year!
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <br/><br/>
-        </form>
+                <br/><br/>
+                </form>
+            {% else %}
+                <h1>try harder</h1>
+            {% endif %}
+            
+        {% else %}
+            <h1>try harder</h1>
+        {% endif %}
 
         {% else %}
          <h1>Oi go log in first, NT</h1>

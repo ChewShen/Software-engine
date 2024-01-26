@@ -14,7 +14,7 @@ class RegisterVisitorForm(forms.ModelForm):
 class NoticeBoard(forms.ModelForm):
     class Meta:
         model = NoticeBoardModel
-        fields = ('NoticeTitle','NoticeDescription')
+        fields = ('NoticeTitle','NoticeDescription','NoticeImage')
 
 class FeedbackForm(forms.ModelForm):
     class Meta:

@@ -47,6 +47,7 @@ class NoticeBoardModel(models.Model):
     NoticeDescription = models.TextField()
     NoticeDate = models.DateField(auto_now=True)
     NoticeTime = models.TimeField(auto_now=True)
+    NoticeImage = models.ImageField(null=True, blank=True, upload_to="notice/")
    
     class Meta:
         verbose_name = 'Notice Board'

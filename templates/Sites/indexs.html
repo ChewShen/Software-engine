@@ -42,8 +42,6 @@
 </style>
 
 <body>
-  {% include 'Sites\navbar.html' %}
-
   {% if messages %}
   <div id="overlay-alert-container">
           {% for message in messages %}
@@ -66,6 +64,8 @@
           {% endfor %}
       </div>
   {% endif %}
+
+  {% include 'Sites\navbar.html' %}
 
   <div class="home-page-desktop">
     <img class="rectangle" src="{% static '\img\MainPage\Rectangle 9.svg' %}" />

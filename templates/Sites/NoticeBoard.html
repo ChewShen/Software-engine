@@ -44,6 +44,9 @@
     <center>
         <h1>Listing</h1>
     </center>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
         {% for announcement in notice_list%}
         <div class="card">
             <div class="card-header">Notice ID: {{announcement.NoticeBoardID}} </div>
@@ -54,11 +57,18 @@
                     <strong>Detail: </strong>{{announcement.NoticeDescription}}<br/>
                     <strong>Date: </strong>{{announcement.NoticeDate}}<br/>
                     <strong>Time: </strong>{{announcement.NoticeTime}}<br/>
+                    <br/>
+                    <p>Hello Evernyan</p><br/>
+
+                    {% if announcement.NoticeImage %}
+                        <img src="{{ announcement.NoticeImage.url }}" width="800" height="600" alt="Image">
+                    {% endif %}
             </p>
             </div>
           </div>
           <br/>
         {% endfor %}
+    </form>
 
         <br/>
         {% if user.role == 'Resident' %}
