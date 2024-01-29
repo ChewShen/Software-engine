@@ -1,6 +1,7 @@
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+
       {% if user.is_authenticated %}
           {%if user.role == 'Resident' %}
             <a class="navbar-brand" href="/ResidentLanding">Dylan's Bakery</a>
@@ -21,8 +22,6 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-
-
           {% if user.is_authenticated %}
               {%if user.role == 'Resident' %}
                 <li class="nav-item">
@@ -34,7 +33,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Bill Payment</a>
+                  <a class="nav-link active" aria-current="page" href="/AllUsers/payment">Bill Payment</a>
                 </li>
 
                 <li class="nav-item">

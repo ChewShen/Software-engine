@@ -28,6 +28,18 @@
     .alert {
         pointer-events: auto;
     }
+
+    #hiddenText {
+        display: none;
+        position: absolute;
+        z-index: 1000; /* Adjust the z-index to position it above other elements */
+        background-color: white; /* Set the background color */
+        padding: 10px;
+        top: 645px;
+        left:830px;
+        border: 1px solid #ccc;;
+        /* Add any other styles you want for the overlay */
+    }
 </style>
 
     <body>
@@ -43,7 +55,7 @@
             </div>
         {% endif %}                                                                    
 
-        <form action="/AllUsers/RegisterUser" method="post">
+        <form action="/AllUsers/RegisterUser" method="post" onsubmit="return validateForm()">
         {% csrf_token %}
         <div class="sign-up">                       
             <div class="div">
@@ -66,7 +78,21 @@
                 <div class="text-wrapper-7">Email*</div>
                 <input class="rectangle-4" type="email" autocomplete="off" id="email" name="email" placeholder="Email" required/>
 
-                <div class="text-wrapper-8">Password*</div>
+                <div class="text-wrapper-8">
+                    Password*
+                    <button type="button" class="btn-primary rounded-circle align-items-center justify-content-center" style="width: 23px; height: 23px;" onclick="showText()">i</button>
+                </div>
+                
+                <div id="hiddenText">
+                    <ul>
+                        <li>The password must more then 8 words.</li>
+                        <li>The password must contain atleast 1 Letter and 1 numberic number.</li>
+                        <li>The passowrd must conatin Uppercase and Lowercase letter.</li>
+                        <li>The password must not be similar to your username.</li>
+                    </ul>
+                </div>
+            
+                
                 <input class="rectangle-5" type="text" autocomplete="off" id="password1" name="password1" placeholder="Password" required/>
 
                 <div class="text-wrapper-9">Password (Confirmation)*</div>
@@ -105,6 +131,47 @@
                     bootstrap.Alert.getInstance(alert).close();
                 }, +alert_timeout);
             });
+        </script>
+
+        <script>
+            var textElement = document.getElementById("hiddenText");
+
+            function showText() {
+                textElement.style.display = "block";
+            }
+
+            function hideText() {
+                textElement.style.display = "none";
+            }
+
+            // Add event listeners to show/hide text on mouseover/mouseout
+            var buttonElement = document.querySelector('.text-wrapper-8 button');
+            buttonElement.addEventListener('mouseover', showText);
+            buttonElement.addEventListener('mouseout', hideText);
+        </script>
+
+        <script>
+            function validateForm() {
+                // Perform your form validation logic
+
+                // For demonstration purposes, let's assume there is an error
+                var hasError = true;
+
+                if (hasError) {
+                    // If there is an error, clear only the password input field
+                    document.getElementById('password1').value = '';
+                    document.getElementById('password2').value = '';
+                    
+                    // Optionally, show an error message or take other actions
+                    alert('There was an error. Please check your password.');
+
+                    // Prevent the default form submission
+                    return false;
+                }
+
+                // If there is no error, allow the form to be submitted
+                return true;
+            }
         </script>
     </body>
 </html>

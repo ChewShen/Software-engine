@@ -59,10 +59,11 @@ class UserProfile(models.Model):
 class UserPaymentModel(models.Model):
     InvoiceID = models.AutoField(primary_key=True, unique=True)
     userID = models.ForeignKey(CustomUser, blank=True, null=True, on_delete = models.CASCADE)
-    PaymentAmount = models.CharField(max_length=20)
+    PaymentAmount = models.CharField(max_length=20, default="0")
     InvoiceDate = models.DateField(auto_now=True)
     InvoiceTime = models.TimeField(auto_now=True)
     InvoiceImage = models.ImageField(null=True, blank=True, upload_to="payment/")
+    paid = models.BooleanField("paid?")
 
     class Meta:
         verbose_name = 'Payment'
@@ -79,6 +80,27 @@ class UserPaymentModel(models.Model):
                 self.InvoiceID = last_record.InvoiceID + 1
             else:
                 self.InvoiceID = 1023000  # Starting from 10001 for the first record
+
+        super().save(*args, **kwargs)
+
+class UploadPaymentModel(models.Model):
+    PaymentID = models.AutoField(primary_key=True, unique=True)
+    PaymentImage = models.FileField(null=True, blank=True, upload_to='payment/Inovice/')
+
+    class Meta:
+        verbose_name = 'Payment Upload'
+        verbose_name_plural = 'Payment Upload'
+
+    def __int__(self):
+        return self.PaymentID
+    
+    def save(self, *args, **kwargs):
+        if not self.pk:  # Checking if it's a new instance
+            last_record = UserPaymentModel.objects.order_by('-InvoiceID').first()
+            if last_record:
+                self.InvoiceID = last_record.InvoiceID + 1
+            else:
+                self.InvoiceID = 52430000  # Starting from 10001 for the first record
 
         super().save(*args, **kwargs)
 

@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import CustomUser
+from .models import CustomUser, UploadPaymentModel
 
 
 class RegisterUserForm(UserCreationForm):
@@ -72,3 +72,11 @@ class PassChangeForm(PasswordChangeForm):
     class Meta:
         model = CustomUser
         fields = ('old_password', 'new_password1', 'new_password2')
+
+
+
+
+class UploadPaymentForm(forms.ModelForm):
+    class Meta:
+        model = UploadPaymentModel
+        fields = ('PaymentID',)

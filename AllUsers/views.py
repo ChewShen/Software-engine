@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
@@ -8,7 +10,9 @@ from .forms import RegisterUserForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfileChangeForm, PassChangeForm
 from django.contrib.auth.views import PasswordChangeView
-from .models import CustomUser
+from .models import CustomUser,UploadPaymentModel
+from pdf2image import convert_from_path
+from pdf2image.exceptions import PDFPageCountError
 # Create your views here.
 
 @login_required
@@ -125,5 +129,16 @@ def EmployeeEdit(request):
     return render(request, 'authentication/EmployeeEdit.html', {'form': form})
 
 
+
+
+
+def payment(request):
+    try:
+        context = UploadPaymentModel.objects.all()
+        images= {'images': context}
+        return render(request, 'Sites/payment.html', images)
+    except PDFPageCountError as e:
+        return render(request, 'error.html', {'error_message': str(e)})
+    
 
 
