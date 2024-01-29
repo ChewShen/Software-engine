@@ -13,6 +13,7 @@ class CustomUser(AbstractUser):
     username = models.CharField(max_length=150,unique=True, null=False)
     role = models.CharField(blank=True, null=True, max_length=10, default="Resident")  # Add the age field to the custom user model
     HouseUnit = models.CharField(blank=True, null=True, max_length=10, default="")
+    ParkingLot = models.CharField(blank=True, null=True, max_length=10, default="")
 
     class Meta:
         default_related_name = 'custom_users'

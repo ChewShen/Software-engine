@@ -69,9 +69,8 @@ class NoticeBoardModel(models.Model):
 
 
 class FeedbackModel(models.Model):
-
     Feedback = models.TextField()
-    
+    FeedbackImage = models.ImageField(null=True, blank=True, upload_to="feedback/")
 
     class Meta:
         verbose_name = 'Feedback'

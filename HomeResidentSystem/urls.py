@@ -15,5 +15,6 @@ urlpatterns = [
     path('EmployeeLanding', views.EmployeeLanding, name="EmployeeLanding"),
     path('admin/logout/', views.adminlogout, name="admin_logout"),
     path('EmployeeSchedule',views.EmployeeSchedule, name="EmployeeSchedule"),
+    path('VisitorFeedback', views.VisitorFeedback, name='VisitorFeedback'),
 ]
 

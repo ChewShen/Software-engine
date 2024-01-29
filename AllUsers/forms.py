@@ -50,7 +50,7 @@ class UserProfileChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ('username', 'first_name', 'last_name', 'email', 'HouseUnit')
+        fields = ('username', 'first_name', 'last_name', 'email', 'HouseUnit','ParkingLot')
 
 # class EmployeeProfileChangeForm(UserChangeForm):
 #     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'rectangle-email','autocomplete': 'off'}))

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'FeedbackStyle.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+    .line-break-with-space {
+        margin-right: 30px; /* Adjust the value as needed */
+    }
+</style>
+
+<body>
+    {% include 'Sites\navbar.html' %}
+
+    <form action="./VisitorFeedback" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="canvas">
+        <div class="div">
+            <div class="overlap-group">
+                <div class="text-elements">
+                        <div class="title">Feedback Form</div>
+                        <div class="element-question-text-goes-wrapper">
+                            <p class="element-question-text-goes">
+                                <span class="text-wrapper">1. Enter Your Feedback </span> <span class="span">we wont read anyway</span></p>
+                        </div>
+                </div>
+
+                <div class="input-rich-text-box">
+                    <textarea name="Feedback" class="rectangle"></textarea>
+                </div>
+
+                <div class="text-elements">
+                    <div class="title">Feedback Form</div>
+                    <div class="element-question-text-goes-wrapper" style="top:550px;">
+                        <p class="element-question-text-goes">
+                            <span class="text-wrapper">2. Upload picture (if you have any) </span></p>
+                            {{form.FeedbackImage}}
+                    </div>
+            </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <center>
+        <div class="button">
+            <button type="submit" class="btn btn-outline-secondary">Submit</button>
+        </div><br/>
+
+        <a href="/home" type="button" class="btn btn-primary">Back</a>
+    </center>
+        </form>
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -19,7 +19,7 @@ class NoticeBoard(forms.ModelForm):
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = FeedbackModel
-        fields = ('Feedback',)
+        fields = ('Feedback','FeedbackImage')
 
 class EmployeeScheduleForm(forms.ModelForm):
     class Meta:

@@ -20,7 +20,7 @@
 <body>
     {% include 'Sites\navbar.html' %}
 
-    <form action="./UserFeedback" method="POST">
+    <form action="./UserFeedback" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="canvas">
         <div class="div">

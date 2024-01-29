@@ -106,5 +106,15 @@ def EmployeeSchedule(request):
 
 
 
+def VisitorFeedback(request):
+    if request.method == "POST":
+        form = FeedbackForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Form submitted successfully!')
+            return redirect('home')  
+    else:
+        form = FeedbackForm()
 
+    return render(request,"Sites/VisitorFeedBack.html",{'form': form})
 
