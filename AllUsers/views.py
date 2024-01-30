@@ -6,11 +6,11 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.urls import reverse_lazy
 from HomeResidentSystem.models import NoticeBoardModel
-from .forms import RegisterUserForm
+from .forms import RegisterUserForm, UploadPaymentForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfileChangeForm, PassChangeForm
 from django.contrib.auth.views import PasswordChangeView
-from .models import CustomUser,UploadPaymentModel
+from .models import CustomUser,UploadPaymentModel,UserPaymentModel
 from pdf2image import convert_from_path
 from pdf2image.exceptions import PDFPageCountError
 # Create your views here.
@@ -133,12 +133,23 @@ def EmployeeEdit(request):
 
 
 def payment(request):
-    try:
-        context = UploadPaymentModel.objects.all()
-        images= {'images': context}
-        return render(request, 'Sites/payment.html', images)
-    except PDFPageCountError as e:
-        return render(request, 'error.html', {'error_message': str(e)})
+    context = UserPaymentModel.objects.all()
+    if request.method == "POST":
+        form = UploadPaymentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            upload_payment = UploadPaymentModel()
+            upload_payment.save()
+            messages.success(request, 'Submitted successfully!')
+            
+            return redirect('ResidentLanding')  
+    else:
+        form = UploadPaymentForm()
+
+
+    return render(request, 'Sites/payment.html', {'form':form, 'context': context})
+
+
     
 
 

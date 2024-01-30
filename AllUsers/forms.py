@@ -79,4 +79,8 @@ class PassChangeForm(PasswordChangeForm):
 class UploadPaymentForm(forms.ModelForm):
     class Meta:
         model = UploadPaymentModel
-        fields = ('PaymentID',)
+        fields = ('PaymentID','PaymentImage','userID')
+
+    def __init__(self, *args, **kwargs):
+        super(UploadPaymentForm, self).__init__(*args, **kwargs)
+        self.fields['PaymentImage'].required = True

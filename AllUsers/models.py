@@ -6,7 +6,8 @@ from django.dispatch import receiver
 from django.contrib.auth.models import Group
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-
+from django.http import HttpRequest
+from django.shortcuts import render
 
 class CustomUser(AbstractUser):
     id = models.AutoField(primary_key=True)
@@ -87,6 +88,7 @@ class UserPaymentModel(models.Model):
 class UploadPaymentModel(models.Model):
     PaymentID = models.AutoField(primary_key=True, unique=True)
     PaymentImage = models.FileField(null=True, blank=True, upload_to='payment/Inovice/')
+    userID = models.ForeignKey(CustomUser, blank=True, null=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Payment Upload'
@@ -103,7 +105,16 @@ class UploadPaymentModel(models.Model):
             else:
                 self.InvoiceID = 52430000  # Starting from 10001 for the first record
 
+        if not self.userID:
+            # If userID is not set, get the current user from the request object
+            current_user = getattr(HttpRequest, 'username', None)
+            if current_user and current_user.is_authenticated:
+                self.userID = CustomUser.objects.get(username=current_user)
+
         super().save(*args, **kwargs)
+
+
+        
 
 
 
