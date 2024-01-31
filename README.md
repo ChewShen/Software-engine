@@ -5,7 +5,7 @@ Activate Your Virtual Environment (Optional but recommended):
 you can continue by:
 **1.drag and drop the venv file i gave into folder you extract just now (or directory)**
 - 1.1 type .\venv\Scripts\activate in cmd
-- 1.2 intall djago-jazzmin by typing _pip install django-jazzmin_
+- 1.2 intall Django-jazzmin by typing _pip install django-jazzmin_
 - 1.3 then type _python manage.py runserver_
 - 1.4 then when to your browser then seaerch for _127.0.0.1:8000_
 - done
