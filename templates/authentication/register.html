@@ -87,8 +87,9 @@
                     <ul>
                         <li>The password must more then 8 words.</li>
                         <li>The password must contain atleast 1 Letter and 1 numberic number.</li>
-                        <li>The passowrd must conatin Uppercase and Lowercase letter.</li>
-                        <li>The password must not be similar to your username.</li>
+                        <li>The password must conatin Uppercase and Lowercase letter.</li>
+                        <li>The password must not be similar to the username.</li>
+                        <li>Password cannot be too common</li>
                     </ul>
                 </div>
             
@@ -150,28 +151,5 @@
             buttonElement.addEventListener('mouseout', hideText);
         </script>
 
-        <script>
-            function validateForm() {
-                // Perform your form validation logic
-
-                // For demonstration purposes, let's assume there is an error
-                var hasError = true;
-
-                if (hasError) {
-                    // If there is an error, clear only the password input field
-                    document.getElementById('password1').value = '';
-                    document.getElementById('password2').value = '';
-                    
-                    // Optionally, show an error message or take other actions
-                    alert('There was an error. Please check your password.');
-
-                    // Prevent the default form submission
-                    return false;
-                }
-
-                // If there is no error, allow the form to be submitted
-                return true;
-            }
-        </script>
     </body>
 </html>

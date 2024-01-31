@@ -19,4 +19,5 @@ urlpatterns = [
     path('<int:pk>/password/',PassChangeView.as_view(template_name='authentication/forgetpass.html'),name="password_change"),
     path('payment',views.payment, name="payment"),
     # path('AllUsers/payment/<path:pdf_path>/', views.payment, name='payment'),
+    path('generatecsv/', views.generate_csv, name='generate_csv'),
 ]

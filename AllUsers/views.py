@@ -1,5 +1,7 @@
+import csv
 import os
 from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
@@ -11,8 +13,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserProfileChangeForm, PassChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from .models import CustomUser,UploadPaymentModel,UserPaymentModel
-from pdf2image import convert_from_path
-from pdf2image.exceptions import PDFPageCountError
+
 # Create your views here.
 
 @login_required
@@ -91,7 +92,6 @@ def RegisterUser(request):
 
 @login_required
 def ResidentEdit(request):
-
     if request.method == 'POST':
         form = UserProfileChangeForm(request.POST, instance=request.user)
         if form.is_valid():
@@ -131,17 +131,14 @@ def EmployeeEdit(request):
 
 
 
-
+@login_required
 def payment(request):
     context = UserPaymentModel.objects.all()
     if request.method == "POST":
         form = UploadPaymentForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            upload_payment = UploadPaymentModel()
-            upload_payment.save()
+            form.save(user=request.user)
             messages.success(request, 'Submitted successfully!')
-            
             return redirect('ResidentLanding')  
     else:
         form = UploadPaymentForm()
@@ -151,5 +148,38 @@ def payment(request):
 
 
     
+# @login_required
+# def generate_csv(request):
+    
+# #     response = HttpResponse(content_type='text/csv')
+# #     response['Content-Disposition'] = 'attachment; filename="payment_records.csv"'
 
+# #     # Create a CSV writer
+# #     writer = csv.writer(response)
+    
+# #     # Write the header row
+# #     writer.writerow(['InvoiceID', 'UserID', 'PaymentAmount', 'InvoiceDate', 'InvoiceTime', 'Paid'])
 
+# #     # Write data rows
+# #     payment_records = UserPaymentModel.objects.all()
+# #     for payment in payment_records:
+# #         writer.writerow([
+# #             payment.InvoiceID,
+# #             payment.userID.username if payment.userID else '',
+# #             payment.PaymentAmount,
+# #             payment.InvoiceDate,
+# #             payment.InvoiceTime,
+# #             payment.paid,
+# #         ])
+
+# #     return response
+#     return render(request,'authentication/testreport.html')
+
+from django.contrib.auth.decorators import user_passes_test
+def is_admin(user):
+    return user.is_authenticated and user.role == 'admin'
+
+@user_passes_test(is_admin)
+@login_required
+def generate_csv(request):
+    return render(request, 'authentication/testreport.html')

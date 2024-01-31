@@ -1,3 +1,4 @@
+import os
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -8,6 +9,12 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.http import HttpRequest
 from django.shortcuts import render
+
+
+import csv
+from django.http import HttpResponse
+
+
 
 class CustomUser(AbstractUser):
     id = models.AutoField(primary_key=True)
@@ -64,7 +71,7 @@ class UserPaymentModel(models.Model):
     PaymentAmount = models.CharField(max_length=20, default="0")
     InvoiceDate = models.DateField(auto_now=True)
     InvoiceTime = models.TimeField(auto_now=True)
-    InvoiceImage = models.ImageField(null=True, blank=True, upload_to="payment/")
+    InvoiceImage = models.ImageField(null=True, blank=True, upload_to="payment/", )
     paid = models.BooleanField("paid?")
 
     class Meta:
@@ -88,15 +95,15 @@ class UserPaymentModel(models.Model):
 class UploadPaymentModel(models.Model):
     PaymentID = models.AutoField(primary_key=True, unique=True)
     PaymentImage = models.FileField(null=True, blank=True, upload_to='payment/Inovice/')
-    userID = models.ForeignKey(CustomUser, blank=True, null=True, on_delete=models.CASCADE)
+    username = models.CharField(max_length=250)
 
     class Meta:
         verbose_name = 'Payment Upload'
         verbose_name_plural = 'Payment Upload'
 
     def __int__(self):
-        return self.PaymentID
-    
+        return self.PaymentID    
+
     def save(self, *args, **kwargs):
         if not self.pk:  # Checking if it's a new instance
             last_record = UserPaymentModel.objects.order_by('-InvoiceID').first()
@@ -105,14 +112,18 @@ class UploadPaymentModel(models.Model):
             else:
                 self.InvoiceID = 52430000  # Starting from 10001 for the first record
 
-        if not self.userID:
-            # If userID is not set, get the current user from the request object
-            current_user = getattr(HttpRequest, 'username', None)
-            if current_user and current_user.is_authenticated:
-                self.userID = CustomUser.objects.get(username=current_user)
-
         super().save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+        # Delete the associated payment image file when the instance is deleted
+        if self.PaymentImage:
+            if os.path.isfile(self.PaymentImage.path):
+                os.remove(self.PaymentImage.path)
+
+        self.userID = kwargs.pop('user', None)
+        super().delete(*args, **kwargs)
+
+    
 
         
 
