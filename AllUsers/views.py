@@ -9,10 +9,19 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.urls import reverse_lazy
 from HomeResidentSystem.models import NoticeBoardModel
 from .forms import RegisterUserForm, UploadPaymentForm
+<<<<<<< HEAD
 from .forms import UserProfileChangeForm, PassChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from .models import CustomUser,UploadPaymentModel,UserPaymentModel
 from django.contrib.auth.decorators import login_required, user_passes_test
+=======
+from django.contrib.auth.decorators import login_required
+from .forms import UserProfileChangeForm, PassChangeForm
+from django.contrib.auth.views import PasswordChangeView
+from .models import CustomUser,UploadPaymentModel,UserPaymentModel
+
+# Create your views here.
+>>>>>>> 626250e0f7e1f75861b566ee34bc265e25e395d2
 
 # Create your views here.
 @login_required
@@ -146,6 +155,7 @@ def payment(request):
     return render(request, 'Sites/payment.html', {'form':form, 'context': context})
 
 
+<<<<<<< HEAD
 
 from django.contrib.auth.decorators import user_passes_test
 def is_admin(user):
@@ -183,8 +193,22 @@ def generate_csv_invoice(request):
         ])
 
     return response
+=======
+    
+# @login_required
+# def generate_csv(request):
+    
+# #     response = HttpResponse(content_type='text/csv')
+# #     response['Content-Disposition'] = 'attachment; filename="payment_records.csv"'
+>>>>>>> 626250e0f7e1f75861b566ee34bc265e25e395d2
 
+# #     # Create a CSV writer
+# #     writer = csv.writer(response)
+    
+# #     # Write the header row
+# #     writer.writerow(['InvoiceID', 'UserID', 'PaymentAmount', 'InvoiceDate', 'InvoiceTime', 'Paid'])
 
+<<<<<<< HEAD
 
 @login_required
 @user_passes_test(is_admin)
@@ -245,3 +269,28 @@ def generate_csv_payment(request):
         ])
 
     return response
+=======
+# #     # Write data rows
+# #     payment_records = UserPaymentModel.objects.all()
+# #     for payment in payment_records:
+# #         writer.writerow([
+# #             payment.InvoiceID,
+# #             payment.userID.username if payment.userID else '',
+# #             payment.PaymentAmount,
+# #             payment.InvoiceDate,
+# #             payment.InvoiceTime,
+# #             payment.paid,
+# #         ])
+
+# #     return response
+#     return render(request,'authentication/testreport.html')
+
+from django.contrib.auth.decorators import user_passes_test
+def is_admin(user):
+    return user.is_authenticated and user.role == 'admin'
+
+@user_passes_test(is_admin)
+@login_required
+def generate_csv(request):
+    return render(request, 'authentication/testreport.html')
+>>>>>>> 626250e0f7e1f75861b566ee34bc265e25e395d2
