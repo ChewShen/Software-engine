@@ -36,6 +36,12 @@ html, body {
         top: 506px;
         left: 7px;
     }
+
+.custom-nbsp {
+display: inline-block;
+width: 3em; /* Adjust the value as needed */
+}
+
 </style>
 
     <body>
@@ -65,6 +71,7 @@ html, body {
                                     </p>
                                 </div>
                             </div>
+
                             <div class="profile-details">
                                 
                         
@@ -84,18 +91,19 @@ html, body {
 
                                 <div class="text">{{user.username}}</div>
 
-                                <div class="text-2">Unit [{{user.HouseUnit}}] </div>
+                                <div class="text-2">
+                                    Unit: <span class="custom-nbsp"></span>&nbsp; [{{user.HouseUnit}}]<br/>
+                                    Parking Lot: [{{user.ParkingLot}}]
 
+                                </div>
 
-                                <div class="text-3">Profile</div>
+                            
+
+                                <div class="text-3" style="margin-top: 15px;"> Profile </div>
 
                             </div>
 
-                            <img class="separator" src="img/separator.svg" />
-
-                            
-                    
-        
+         
                             <button class="save btn btn-outline-secondary btn-secondary" type="submit">
                                 <div class="text-wrapper-6" href="#" style="text-decoration:none" role="button">Save</div>
                             </button>

@@ -21,12 +21,11 @@ class CustomUserPaymentModel(admin.ModelAdmin):
     user_ID.short_description = 'User ID'
 
 class CustomUploadPaymentModel(admin.ModelAdmin): 
-    list_display = ('PaymentID',)
-    list_display_links =  ('PaymentID',)
+    list_display = ('PaymentID','username')
+    list_display_links =  ('PaymentID','username')
     ordering = ['PaymentID'] 
 
 
-    
 admin.site.register(CustomUser, CustomShow)
 admin.site.register(UserPaymentModel, CustomUserPaymentModel)
 admin.site.register(UploadPaymentModel, CustomUploadPaymentModel)

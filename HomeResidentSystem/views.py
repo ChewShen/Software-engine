@@ -1,3 +1,4 @@
+import csv
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -5,8 +6,9 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import RegisterVisitorForm, FeedbackForm, EmployeeScheduleForm, NoticeBoard
-from .models import NoticeBoardModel, EmployeeScheduleModel
+from .models import NoticeBoardModel, EmployeeScheduleModel, FeedbackModel, RegisterForm
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 # from AllUsers.models import CustomUser
@@ -118,3 +120,63 @@ def VisitorFeedback(request):
 
     return render(request,"Sites/VisitorFeedBack.html",{'form': form})
 
+
+
+def is_admin(user):
+    return user.is_authenticated and user.role == 'Admin'
+
+
+@login_required
+@user_passes_test(is_admin)
+def generate_csv_feedback(request):
+    
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="feedback_records.csv"'
+
+    # Create a CSV writer
+    writer = csv.writer(response)
+    
+    # Write the header row
+    writer.writerow(['ID', 'Feedback','Feedback Image'])
+
+    # Write data rows
+    feedback_records = FeedbackModel.objects.all()
+    for feedback in feedback_records:
+        writer.writerow([
+            feedback.id,
+            feedback.Feedback,
+            feedback.FeedbackImage, 
+        ])
+
+    return response
+
+
+@login_required
+@user_passes_test(is_admin)
+def generate_csv_visitor(request):
+    
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="visitor_records.csv"'
+
+    # Create a CSV writer
+    writer = csv.writer(response)
+    
+    # Write the header row
+    writer.writerow(['VisitorID', 'Plate Number','License Number','Car Model','Phone Number','Date arrived','Time arrived','Car amount','HouseUnit','Estimate to leave'])
+
+    # Write data rows
+    visitor_records = RegisterForm.objects.all()
+    for visitor in visitor_records:
+        writer.writerow([
+            visitor.VisitorID,
+            visitor.noPlate,
+            visitor.LicenseNum,
+            visitor.CarModel,
+            visitor.PhoneNum,
+            visitor.DateTime,
+            visitor.CarNum,
+            visitor.HouseUnit,
+            visitor.leave
+        ])
+
+    return response

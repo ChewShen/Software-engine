@@ -1,20 +1,20 @@
+import csv
 import os
 from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.urls import reverse_lazy
 from HomeResidentSystem.models import NoticeBoardModel
-from .forms import RegisterUserForm
-from django.contrib.auth.decorators import login_required
+from .forms import RegisterUserForm, UploadPaymentForm
 from .forms import UserProfileChangeForm, PassChangeForm
 from django.contrib.auth.views import PasswordChangeView
-from .models import CustomUser,UploadPaymentModel
-from pdf2image import convert_from_path
-from pdf2image.exceptions import PDFPageCountError
-# Create your views here.
+from .models import CustomUser,UploadPaymentModel,UserPaymentModel
+from django.contrib.auth.decorators import login_required, user_passes_test
 
+# Create your views here.
 @login_required
 def isAdmin(request):
     return redirect('/admin')
@@ -91,7 +91,6 @@ def RegisterUser(request):
 
 @login_required
 def ResidentEdit(request):
-
     if request.method == 'POST':
         form = UserProfileChangeForm(request.POST, instance=request.user)
         if form.is_valid():
@@ -131,14 +130,118 @@ def EmployeeEdit(request):
 
 
 
-
+@login_required
 def payment(request):
-    try:
-        context = UploadPaymentModel.objects.all()
-        images= {'images': context}
-        return render(request, 'Sites/payment.html', images)
-    except PDFPageCountError as e:
-        return render(request, 'error.html', {'error_message': str(e)})
+    context = UserPaymentModel.objects.all()
+    if request.method == "POST":
+        form = UploadPaymentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save(user=request.user)
+            messages.success(request, 'Submitted successfully!')
+            return redirect('ResidentLanding')  
+    else:
+        form = UploadPaymentForm()
+
+
+    return render(request, 'Sites/payment.html', {'form':form, 'context': context})
+
+
+
+from django.contrib.auth.decorators import user_passes_test
+def is_admin(user):
+    return user.is_authenticated and user.role == 'Admin'
+
+@login_required
+@user_passes_test(is_admin)
+def generate_csv(request):
+    return render(request, 'authentication/testreport.html')
+
+
+@login_required
+@user_passes_test(is_admin)
+def generate_csv_invoice(request):
     
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="inovice_records.csv"'
+
+    # Create a CSV writer
+    writer = csv.writer(response)
+    
+    # Write the header row
+    writer.writerow(['InvoiceID', 'UserID', 'PaymentAmount', 'InvoiceDate', 'InvoiceTime', 'Paid'])
+
+    # Write data rows
+    payment_records = UserPaymentModel.objects.all()
+    for payment in payment_records:
+        writer.writerow([
+            payment.InvoiceID,
+            payment.userID.username if payment.userID else '',
+            payment.PaymentAmount,
+            payment.InvoiceDate,
+            payment.InvoiceTime,
+            payment.paid,
+        ])
+
+    return response
 
 
+
+@login_required
+@user_passes_test(is_admin)
+def generate_csv_user(request):
+    
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="user_records.csv"'
+
+    # Create a CSV writer
+    writer = csv.writer(response)
+    
+    # Write the header row
+    writer.writerow(['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name','last_name','email','is_staff','is_active','date_joined','role','HouseUnit','ParkingLot'])
+
+    # Write data rows
+    user_records = CustomUser.objects.all()
+    for user in user_records:
+        writer.writerow([
+            user.id,
+            user.password,
+            user.last_login,
+            user.is_superuser,
+            user.username,
+            user.first_name,
+            user.last_name,
+            user.email,
+            user.is_staff,
+            user.is_active,
+            user.date_joined,
+            user.role,
+            user.HouseUnit,
+            user.ParkingLot
+        ])
+
+    return response
+
+
+@login_required
+@user_passes_test(is_admin)
+def generate_csv_payment(request):
+    
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="payment_records.csv"'
+
+    # Create a CSV writer
+    writer = csv.writer(response)
+    
+    # Write the header row
+    writer.writerow(['Payment ID', 'Payment Receipt', 'Payment User'])
+
+    # Write data rows
+    payment_records = UploadPaymentModel.objects.all()
+    for payment in payment_records:
+        writer.writerow([
+          payment.PaymentID,
+          payment.PaymentImage,
+          payment.username,
+        ])
+
+    return response

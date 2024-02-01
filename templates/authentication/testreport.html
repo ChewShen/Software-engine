@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'reportStyle.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+    <body>
+        {% include 'Sites/navbar.html' %}
+        <div class="frame">
+            <div class="text-wrapper">Generate Report</div>
+            <div class="div"></div>
+            <div class="text-wrapper-2">report for User:</div>
+            <div class="div-wrapper">
+                <a class="btn btn-secondary text-wrapper-3" href="./generatecsv_user" role="button">Generate</a>
+            </div>
+            <div class="text-wrapper-4">report for Payment:</div>
+            <div class="div-2">
+                <div class="div-wrapper-2"><div class="text-wrapper-5">For invoice: <a class="btn btn-secondary text-wrapper-6" href="./generatecsv_invoice" role="button">Generate</a> </div></div>
+                
+                <div class="div-wrapper-2"><div class="text-wrapper-5">For Payment: <a class="btn btn-secondary text-wrapper-6" href="./generatecsv_payment" role="button">Generate</a> </div></div>
+            </div>
+            <br/>
+            <div class="div">report for feedback:</div>
+            <div class="div-wrapper-3">
+                <a class="btn btn-secondary text-wrapper-6" href="/generatecsv_feedback" role="button">Generate</a>
+            </div>
+            
+            <div class="text-wrapper-7">report for Visitor:</div>
+            <div class="div-wrapper-3">
+                <a class="btn btn-secondary text-wrapper-6" href="/generatecsv_visitor" role="button">Generate</a>
+            </div>
+
+
+            <div class="text-wrapper-8">report for Employee Schedule</div>
+            <div class="div-wrapper-3"><div class="text-wrapper-6">generate</div></div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

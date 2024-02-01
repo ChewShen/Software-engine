@@ -16,5 +16,7 @@ urlpatterns = [
     path('admin/logout/', views.adminlogout, name="admin_logout"),
     path('EmployeeSchedule',views.EmployeeSchedule, name="EmployeeSchedule"),
     path('VisitorFeedback', views.VisitorFeedback, name='VisitorFeedback'),
+    path('generatecsv_feedback', views.generate_csv_feedback, name='generate_csv_feedback'),
+    path('generatecsv_visitor', views.generate_csv_visitor, name='generate_csv_visitor'),
 ]
 

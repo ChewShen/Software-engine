@@ -1,7 +1,7 @@
 .frame {
     display: flex;
     flex-direction: column;
-    height: 885px;
+    height: 1285px;
     align-items: flex-start;
     gap: 10px;
     padding: 10px;
@@ -12,8 +12,8 @@
 
 .frame .image {
     position: absolute;
-    width: 1520px;
-    height: 893px;
+    width: 1521px;
+    height: 1570px;
     top: -4px;
     left: -4px;
     object-fit: cover;
@@ -202,3 +202,17 @@
     left: 330px;
     object-fit: cover;
 }
+
+.frame .div-wrapper-51 {
+    width: 98px;
+    height: 35px;
+    gap: 10px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 0px 5px;
+    background-color: #ffffff;
+    border-radius: 15px; /* Set a higher z-index value */
+}
+
+
