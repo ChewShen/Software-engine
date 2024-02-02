@@ -105,14 +105,14 @@
 }
 
 .frame .text-wrapper-5 {
-    width: 154px;
+    width: 212px;
     position: relative;
     margin-top: -1px;
     font-family: "Poppins-Bold", Helvetica;
     font-weight: 700;
     color: #000000;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0;
     line-height: normal;
 }
@@ -120,7 +120,7 @@
 .frame .div-wrapper-3 {
     display: inline-flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 15px;
     padding: 0px 5px;
     position: relative;
     flex: 0 0 auto;

@@ -162,7 +162,7 @@ def generate_csv_visitor(request):
     writer = csv.writer(response)
     
     # Write the header row
-    writer.writerow(['VisitorID', 'Plate Number','License Number','Car Model','Phone Number','Date arrived','Time arrived','Car amount','HouseUnit','Estimate to leave'])
+    writer.writerow(['VisitorID', 'Plate Number','License Number','Car Model','Phone Number','Date arrived','Car amount','HouseUnit','Estimate to leave'])
 
     # Write data rows
     visitor_records = RegisterForm.objects.all()

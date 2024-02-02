@@ -20,10 +20,7 @@ urlpatterns = [
     path('payment',views.payment, name="payment"),
     # path('AllUsers/payment/<path:pdf_path>/', views.payment, name='payment'),
     path('generatecsv/', views.generate_csv, name='generate_csv'),
-<<<<<<< HEAD
     path('generatecsv/generatecsv_invoice', views.generate_csv_invoice, name='generate_csv_invoice'),
     path('generatecsv/generatecsv_user', views.generate_csv_user, name='generate_csv_user'),
     path('generatecsv/generatecsv_payment', views.generate_csv_payment, name='generate_csv_payment'),
-=======
->>>>>>> 626250e0f7e1f75861b566ee34bc265e25e395d2
 ]
