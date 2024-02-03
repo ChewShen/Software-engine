@@ -11,12 +11,12 @@ Step 1: typing _python -m venv venv_ in cmd
 Step 2: then type venv\Scripts\activate
 
 Step 3: you need to install all te pip which are:
-      - asgiref (standby)
-      - Django  (needed)
-      - django-jazzmin (needed)
-      - pillow (needed)
-      - sqlparse (standby)
-      - tzdata (standby)
+- asgiref (standby)
+- Django  (needed)
+- django-jazzmin (needed)
+- pillow (needed)
+- sqlparse (standby)
+- tzdata (standby)
 
   by typing pip install (the package name)
 
