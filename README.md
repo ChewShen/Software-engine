@@ -7,7 +7,9 @@ you can continue by:
 **1. When ever you encounting any problem, you can do it manually by**
 
 Step 1: typing _python -m venv venv_ in cmd
+
 Step 2: then type venv\Scripts\activate
+
 Step 3: you need to install all te pip which are:
       asgiref
       Django
@@ -19,8 +21,11 @@ Step 3: you need to install all te pip which are:
   by typing pip install (the package name)
 
 step 4: type _python manage.py makemigrations_
+
 step 5: type _python manage.py migrate_
+
 Step 6: type _python manage.py runsevrver_
+
 Step 7: then when to your browser then seaerch for _127.0.0.1:8000_
 
 
