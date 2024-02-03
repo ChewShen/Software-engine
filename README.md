@@ -6,6 +6,8 @@ you can continue by:
   
 **1. When ever you encounting any problem, you can do it manually by**
 
+**Important: delete the db.sqlite3 file**
+
 Step 1: typing _python -m venv venv_ in cmd
 
 Step 2: then type venv\Scripts\activate
