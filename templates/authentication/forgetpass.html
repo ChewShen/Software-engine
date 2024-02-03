@@ -38,13 +38,47 @@
     }
 
     
+    #overlay-alert-container {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    pointer-events: none; 
+    }
 
+    .alert {
+        pointer-events: auto;
+    }
     
 
 </style>
 
 <body>
     {% include 'Sites/navbar.html' %}
+
+    {% if messages %}
+  <div id="overlay-alert-container">
+          {% for message in messages %}
+              {% if message.tags == 'success' %}
+                  <div class="alert alert-success alert-dismissible fade show" data-timeout="4000" role="alert">
+                      <strong>Success:</strong> {{ message }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              {% elif message.tags == 'error' %}
+                  <div class="alert alert-danger alert-dismissible fade show"  data-timeout="4000" role="alert">
+                      <strong>Error:</strong> {{ message }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              {% else %}
+                  <div class="alert alert-warning alert-dismissible fade show" data-timeout="4000" role="alert">
+                      <strong>Warning:</strong> {{ message }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              {% endif %}
+          {% endfor %}
+      </div>
+  {% endif %}
      
     <form method="post">
     {% csrf_token %}

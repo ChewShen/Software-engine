@@ -29,6 +29,23 @@
     .alert {
         pointer-events: auto;
     }
+
+    .img-bg {
+        /* The image used */
+        background-image: url("photographer.jpg");
+
+        /* Add the blur effect */
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
 </style>
 
 <body>
@@ -64,42 +81,43 @@
                 <div class="element">
                     <div class="overlap-group-wrapper">
                         <div class="overlap-group">
-                            <img class="hero-image-bg" src="{% static 'img/unsplash_1XLyzi17Z2M.png' %}" />
+                            <img class="hero-image-bg img-bg" src="{% static 'img\ResidentLanding\bg2.png' %}" />
 
                             <div class="images-bottom">
                                 <div class="frame-1">
                                     <div class="div-wrapper"><div class="text-wrapper">Stays</div></div>
                                 </div>
                                 <div class="frame-2">
-                                    <div class="div-wrapper"><div class="text-wrapper">Flights</div></div>
+                                    <div class="div-wrapper"><div class="text-wrapper">Security</div></div>
                                 </div>
                                 <div class="frame-3">
-                                    <div class="div-wrapper"><div class="text-wrapper">Cruises</div></div>
+                                    <div class="div-wrapper"><div class="text-wrapper">Views</div></div>
                                 </div>
                                 <div class="frame-4">
                                     <div class="div-wrapper"><div class="text-wrapper">Cars</div></div>
                                 </div>
                                 <div class="frame-5">
-                                    <div class="div-wrapper"><div class="text-wrapper">Fun</div></div>
+                                    <div class="div-wrapper"><div class="text-wrapper">Facility</div></div>
                                 </div>
                                 <div class="frame-6">
-                                    <div class="div-wrapper"><div class="text-wrapper">Restaurants</div></div>
+                                    <div class="div-wrapper"><div class="text-wrapper">Friendly</div></div>
                                 </div>
                             </div>
 
-                            <div class="conent">
+                            <!-- <div class="conent">
                                 <a type="button" href="/NoticeBoard" class="btn btn-secondary text-wrapper-2 primary-button">View Notice</a>
                         
                                 <a type="button" href="/AllUsers/ResidentEdit" class="btn btn-secondary text-wrapper-2 primary-button">Manage Profile</a>
-                                <!-- <a type="button" href="#" class="btn btn-secondary text-wrapper-2 primary-button">Parking Management</a> -->
+                                <a type="button" href="#" class="btn btn-secondary text-wrapper-2 primary-button">Parking Management</a>
                                 <a type="button" href="/AllUsers/payment" class="btn btn-secondary text-wrapper-3 primary-button">Payment</a>
                                 <a type="button" href="/UserFeedback" class="btn btn-secondary text-wrapper-3 primary-button">Feedback</a>
-                            </div>
+                            </div> -->
                             <div class="title">
-                                <div class="travel-around-follow">Home Sweet Home, Welcome {{user}}</div><br/>
+                                <div class="travel-around-follow" style="color:white ">Home Sweet Home, Welcome {{user}}</div><br/>
                                 <p class="p">
-                                    The molds at the manufacturing plant at Lego are so precise and effective that just 18 out of 1 million are found to be defective.
-                                    That's out of the 20 billion pieces that are manufactured every year!
+                                    Our residential area offers an unparalleled living experience with its prime location, top-notch safety measures, and well-planned infrastructure. 
+                                    <br/><br/>Residents enjoy access to green spaces, parks, and recreational facilities, fostering an active lifestyle and community engagement.
+                                    <br/><br/>With a diverse range of quality housing options and excellent services nearby, including schools and healthcare centers, our neighborhood provides convenience, security, and a strong sense of community, making it the perfect place to call home.
                                 </p>
                             </div>
                         </div>

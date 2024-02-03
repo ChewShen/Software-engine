@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
@@ -65,7 +66,19 @@ class UserProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     # Additional profile fields like profile picture, bio, etc.
 
-class UserPaymentModel(models.Model):
+
+
+class MonthField(models.DateField):
+    def pre_save(self, model_instance, add):
+        # Set day to 01 and year to a fixed value (e.g., 2000)
+        value = getattr(model_instance, self.attname)
+        value = datetime.strptime(f"{value.month:02d}-01", "%m-%d").date()
+        setattr(model_instance, self.attname, value)
+        return value
+
+
+
+class UserPaymentModel(models.Model): #User's invoice
     InvoiceID = models.AutoField(primary_key=True, unique=True)
     userID = models.ForeignKey(CustomUser, blank=True, null=True, on_delete = models.CASCADE)
     PaymentAmount = models.CharField(max_length=20, default="0")
@@ -73,6 +86,7 @@ class UserPaymentModel(models.Model):
     InvoiceTime = models.TimeField(auto_now=True)
     InvoiceImage = models.ImageField(null=True, blank=True, upload_to="payment/", )
     paid = models.BooleanField("paid?")
+    InvoiceMonth = MonthField()
 
     class Meta:
         verbose_name = 'Payment'
@@ -92,7 +106,7 @@ class UserPaymentModel(models.Model):
 
         super().save(*args, **kwargs)
 
-class UploadPaymentModel(models.Model):
+class UploadPaymentModel(models.Model): #user upload thir receipt
     PaymentID = models.AutoField(primary_key=True, unique=True)
     PaymentImage = models.FileField(null=True, blank=True, upload_to='payment/Inovice/')
     username = models.CharField(max_length=250)

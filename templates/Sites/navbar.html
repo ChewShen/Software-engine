@@ -2,18 +2,15 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
 
-      {% if user.is_authenticated %}
           {%if user.role == 'Resident' %}
-            <a class="navbar-brand" href="/ResidentLanding">Dylan's Bakery</a>
+            <a class="navbar-brand" href="/ResidentLanding">Home</a>
           {% endif %}
 
           {%if user.role == 'Employee' %}
-            <a class="navbar-brand" href="/EmployeeLanding">Dylan's Bakery</a>
+            <a class="navbar-brand" href="/EmployeeLanding">Home</a>
           {% endif%}
           
-      {% else %}
-        <a class="navbar-brand" href="/home">Dylan's Bakery</a>
-      {% endif %}
+      
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-          {% if user.is_authenticated %}
+          
               {%if user.role == 'Resident' %}
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="/NoticeBoard">Notice Board</a>
@@ -40,7 +37,7 @@
                   <a class="nav-link active" aria-current="page" href="/UserFeedback">FeedBack</a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
                   </a>
@@ -50,7 +47,7 @@
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                   <a class="nav-link active"  href="/logout">Log Out</a>
@@ -75,19 +72,7 @@
 
               {% endif %}
 
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link"  href="/AllUsers/RegisterUser">Register</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link"  href="/RegisterVisitor">Visitor?</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link"  href="#">Need Help?</a>
-          </li>
-          {% endif %}
+          
             
 
 

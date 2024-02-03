@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'AllUsers'
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'ResidentSystem.urls'
