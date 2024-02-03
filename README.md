@@ -3,18 +3,12 @@ after downloaded the zip file and extraction it, at command promt (recommended) 
 Activate Your Virtual Environment (Optional but recommended):
 
 you can continue by:
-**1.drag and drop the venv file i gave into folder you extract just now (or directory)**
-- 1.1 type .\venv\Scripts\activate in cmd
-- 1.2 intall Django-jazzmin by typing _pip install django-jazzmin_
-- 1.3 then type _python manage.py runserver_
-- 1.4 then when to your browser then seaerch for _127.0.0.1:8000_
-- done
-
   
-**2. When ever you encounting any problem, you can do it manually by**
-- 2.1 typing _python -m venv venv_ in cmd
-- 2.2 then type .\venv\Scripts\activate
-- 2.3 you need to install all te pip which are:
+**1. When ever you encounting any problem, you can do it manually by**
+
+Step 1: typing _python -m venv venv_ in cmd
+Step 2: then type venv\Scripts\activate
+Step 3: you need to install all te pip which are:
       asgiref
       Django
       django-jazzmin
@@ -22,10 +16,12 @@ you can continue by:
       sqlparse
       tzdata
 
-  by typing pip instal (the package name)
-  
-- 2.4 type _python manage.py runsevrver_
-- 2.5 then when to your browser then seaerch for _127.0.0.1:8000_
+  by typing pip install (the package name)
+
+step 4: type _python manage.py makemigrations_
+step 5: type _python manage.py migrate_
+Step 6: type _python manage.py runsevrver_
+Step 7: then when to your browser then seaerch for _127.0.0.1:8000_
 
 
 
