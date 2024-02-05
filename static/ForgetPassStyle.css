@@ -17,7 +17,8 @@
     position: relative;
     height: 1080px;
     width: 1520px;
-    background-image: url(./img/gura/gurabackground.png);
+    /* background-image: url(./img/gura/gurabackground.png); */
+    background-image: url(./img/passchange/clubhouse.jpg);
     background-size: cover;
     background-position: 50% 50%;
 }

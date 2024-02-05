@@ -151,10 +151,10 @@ JAZZMIN_SETTINGS = {
     "site_title": "Library Admin",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Dylan's Basement",
+    "site_header": "Admin Page",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Dylan's Basement",
+    "site_brand": "Admin Page",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "./img/cat1.jpg",
@@ -175,7 +175,7 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Welcome to the basement",
 
     # Copyright on the footer
-    "copyright": "Dylans Bakery sdn bhd",
+    "copyright": "Dylans favourite sdn bhd",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 

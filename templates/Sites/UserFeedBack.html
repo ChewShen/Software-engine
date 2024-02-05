@@ -29,23 +29,32 @@
                         <div class="title">Feedback Form</div>
                         <div class="element-question-text-goes-wrapper">
                             <p class="element-question-text-goes">
-                                <span class="text-wrapper">1. Enter Your Feedback </span> <span class="span">we wont
-                                    read anyway</span></p>
+                                <span class="text-wrapper">1. Enter Your Feedback </span> <span class="span">Your feedback will be in anonymous</span></p>
                         </div>
                 </div>
                 <div class="input-rich-text-box">
                     <textarea name="Feedback" class="rectangle"></textarea>
                 </div>
                 
+                <div class="text-elements">
+                    <div class="title">Feedback Form</div>
+                    <div class="element-question-text-goes-wrapper" style="top:550px;">
+                        <p class="element-question-text-goes">
+                            <span class="text-wrapper">2. Upload picture (if you have any) </span></p>
+                            {{form.FeedbackImage}}
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-
+    <br/><br/><br/><br/><br/><br/><br/>
     <center>
-        <br/>
         <div class="button">
             <button type="submit" class="btn btn-outline-secondary">Submit</button>
-        </div>
+        </div><br/>
+
+        <a href="/ResidentLanding" type="button" class="btn btn-primary">Back</a>
     </center>
         </form>
 

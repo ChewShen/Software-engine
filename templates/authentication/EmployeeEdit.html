@@ -46,12 +46,12 @@
                         <div class="main-card">
                             <div class="background">
                                 <div class="overlap-group">
-                                    <img class="image" src="{% static 'img/gura/guraback1.png' %}" />
+                                    <img class="image" src="{% static 'img\EmployeeEdit\bg2.png' %}" />
                                     <p class="lokyinhouse">
-                                        <a href="https://twitter.com/lokyinhouse" target="_blank" rel="noopener noreferrer"
+                                        <!-- <a href="https://twitter.com/lokyinhouse" target="_blank" rel="noopener noreferrer"
                                             ><span class="text-wrapper">@lokyinhouse<br /></span
                                         ></a>
-                                        <span class="span"><br /></span>
+                                        <span class="span"><br /></span> -->
                                     </p>
                                 </div>
                             </div>
@@ -71,10 +71,12 @@
                                 <div class="text-wrapper-5">Last Name</div>
                                 {{form.last_name}}
 
-                                <div class="text">{{user.username}}</div>
-                                <div class="text-3">Profile</div>
+                                <div class="text">{{user.username}}<br/><span style="color:grey">[Employee]</span>
+                                </div>
+                                
+                                <div class="text-3" style="top:120px;">Profile</div>
                             </div>
-                            <img class="separator" src="img/separator.svg" />
+                            
 
                             <button class="save btn btn-outline-secondary btn-secondary" type="submit">
                                 <div class="text-wrapper-6" href="#" style="text-decoration:none" role="button">Save</div>

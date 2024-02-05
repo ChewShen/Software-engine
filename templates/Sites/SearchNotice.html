@@ -46,16 +46,15 @@
     {% csrf_token %}
     {% for NoticeTitle in notice %}
         <div class="card">
-            <div class="card-header">Notice ID: {{announcement.NoticeBoardID}} </div>
+            <div class="card-header">Notice ID: {{NoticeTitle.NoticeBoardID}} </div>
             <div class="card-body">
-            <h5 class="card-title">{{announcement}}</h5>
+            <h5 class="card-title">{{NoticeTitle}}</h5>
             <p class="card-text"><br/>
             
-                    <strong>Detail: </strong>{{announcement.NoticeDescription}}<br/>
-                    <strong>Date: </strong>{{announcement.NoticeDate}}<br/>
-                    <strong>Time: </strong>{{announcement.NoticeTime}}<br/>
+                    <strong>Detail: </strong>{{NoticeTitle.NoticeDescription}}<br/>
+                    <strong>Date: </strong>{{NoticeTitle.NoticeDate}}<br/>
+                    <strong>Time: </strong>{{NoticeTitle.NoticeTime}}<br/>
                     <br/>
-                    <p>Hello Evernyan</p><br/>
 
                     {% if NoticeTitle.NoticeImage %}
                         <img src="{{ NoticeTitle.NoticeImage.url }}" width="800" height="600" alt="Image">
@@ -72,16 +71,16 @@
     {% csrf_token %}
     {% for NoticeDate in NoticeWithDate %}
         <div class="card">
-            <div class="card-header">Notice ID: {{announcement.NoticeBoardID}} </div>
+            <div class="card-header">Notice ID: {{NoticeDate.NoticeBoardID}} </div>
             <div class="card-body">
-            <h5 class="card-title">{{announcement}}</h5>
+            <h5 class="card-title">{{NoticeDate}}</h5>
             <p class="card-text"><br/>
             
-                    <strong>Detail: </strong>{{announcement.NoticeDescription}}<br/>
-                    <strong>Date: </strong>{{announcement.NoticeDate}}<br/>
-                    <strong>Time: </strong>{{announcement.NoticeTime}}<br/>
+                    <strong>Detail: </strong>{{NoticeDate.NoticeDescription}}<br/>
+                    <strong>Date: </strong>{{NoticeDate.NoticeDate}}<br/>
+                    <strong>Time: </strong>{{NoticeDate.NoticeTime}}<br/>
                     <br/>
-                    <p>Hello Evernyan</p><br/>
+                
 
                     {% if NoticeDate.NoticeImage %}
                         <img src="{{ NoticeDate.NoticeImage.url }}" width="800" height="600" alt="Image">
@@ -115,7 +114,6 @@
                     <strong>Date: </strong>{{announcement.NoticeDate}}<br/>
                     <strong>Time: </strong>{{announcement.NoticeTime}}<br/>
                     <br/>
-                    <p>Hello Evernyan</p><br/>
 
                     {% if announcement.NoticeImage %}
                         <img src="{{ announcement.NoticeImage.url }}" width="800" height="600" alt="Image">

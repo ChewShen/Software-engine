@@ -273,7 +273,8 @@
     height: 1024px;
     top: 0;
     left: 0;
-    background-image: url(./img/kafka.jpg);
+    /* background-image: url(./img/kafka.jpg); */
+    background-image: url(./img/register/registerbg.jpg);
     background-size: cover;
     background-position: 50% 50%;
 }

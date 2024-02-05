@@ -49,12 +49,6 @@ class CustomUser(AbstractUser):
         self.groups.clear()
         super().delete(*args, **kwargs)
 
-@receiver(pre_save, sender=CustomUser)
-def update_house_unit(sender, instance, **kwargs):
-    if instance.role == 'Resident':
-        instance.HouseUnit = 'PPAP'
-    else:
-        instance.HouseUnit = None
 
 
 @receiver(pre_delete, sender=CustomUser)

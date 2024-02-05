@@ -24,11 +24,11 @@ def EmployeeLanding(request):
 
 def UserFeedBack(request):
     if request.method == "POST":
-        form = FeedbackForm(request.POST)
+        form = FeedbackForm(request.POST,  request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Form submitted successfully!')
-            return redirect('home')  
+            return redirect('/ResidentLanding')  
     else:
         form = FeedbackForm()
 
@@ -43,9 +43,9 @@ def ResidentLanding(request):
 def SearchNotice(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        notice = NoticeBoardModel.objects.filter(Q(NoticeTitle__contains=searched) | Q(NoticeImage__contains=searched))
-        NoticeWithDate = NoticeBoardModel.objects.filter(NoticeDate__contains=searched)
-        announcement = NoticeBoardModel.objects.all()
+        notice = NoticeBoardModel.objects.filter(Q(NoticeTitle__contains=searched) | Q(NoticeImage__contains=searched)).order_by('-NoticeDate')
+        NoticeWithDate = NoticeBoardModel.objects.filter(NoticeDate__contains=searched).order_by('-NoticeDate')
+        announcement = NoticeBoardModel.objects.all().order_by('-NoticeDate')
         return render(request, "Sites/searchNotice.html", {'searched': searched, 'NoticeWithDate': NoticeWithDate, 'notice': notice, 'notice_list': announcement})
 
     else:
@@ -70,7 +70,7 @@ def home(request):
     return render(request,"Sites/indexs.html")
 
 def NoticeBoard(request):
-        announcement = NoticeBoardModel.objects.all()
+        announcement = NoticeBoardModel.objects.all().order_by('-NoticeDate')
         if request.method == "POST":
             if form.is_valid():
                 form.save()

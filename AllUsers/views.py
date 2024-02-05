@@ -142,7 +142,7 @@ def payment(request):
     if request.method == "POST":
         form = UploadPaymentForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save(user=request.user)
+            form.save()
             messages.success(request, 'Submitted successfully!')
             return redirect('ResidentLanding')  
     else:
@@ -163,58 +163,34 @@ def generate_csv(request):
     return render(request, 'authentication/testreport.html')
 
 
-from datetime import datetime
-import csv
-
+@login_required
+@user_passes_test(is_admin)
 def generate_csv_invoice(request):
-    # Get the selected month and year from the request
-    selected_month = request.GET.get('month')
-    selected_year = request.GET.get('year')
-
-    # Set default values or handle the case when month and year are not provided
-    selected_month = selected_month or '01'
-    selected_year = selected_year or '2022'
-
+    
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = f'attachment; filename="{selected_month}_{selected_year}_invoice_records.csv"'
+    response['Content-Disposition'] = 'attachment; filename="invoice_records.csv"'
 
     # Create a CSV writer
     writer = csv.writer(response)
     
     # Write the header row
-    writer.writerow(['InvoiceID', 'UserID', 'PaymentAmount', 'InvoiceDate', 'InvoiceTime', 'Paid'])
+    writer.writerow(['Invoice ID', 'username', 'Outstanding Payment', 'Invoice Date','Invoice Time', 'Invoice Image','paid?','user ID'])
 
-    try:
-        # Convert selected_month and selected_year to datetime for comparison
-        selected_date = datetime.strptime(f"{selected_year}-%d-%m", "%Y-%d-%m")
-
-        # Write data rows for records within the selected month and year
-        payment_records = UserPaymentModel.objects.filter(
-            InvoiceDate__month=selected_date.month,
-            InvoiceDate__year=selected_date.year
-        )
-
-        for payment in payment_records:
-            # Format the date as needed
-            formatted_date = f"{payment.InvoiceDate.year}-{payment.InvoiceDate.day:02d}-{payment.InvoiceDate.month:02d}"
-            
-            writer.writerow([
-                payment.InvoiceID,
-                payment.userID.username if payment.userID else '',
-                payment.PaymentAmount,
-                formatted_date,
-                payment.InvoiceTime.strftime('%H:%M:%S'),  # Format the time as needed
-                payment.paid,
-            ])
-
-    except ValueError:
-        # Handle the case where the date conversion fails
-        writer.writerow(['Error: Invalid Date'])
+    # Write data rows
+    invoice_records = UserPaymentModel.objects.all()
+    for payment in invoice_records:
+        writer.writerow([
+            payment.InvoiceID,
+            payment.userID.username if payment.userID else '',
+            payment.PaymentAmount,
+            payment.InvoiceDate,
+            payment.InvoiceTime,
+            payment.InvoiceImage,
+            payment.paid,
+            payment.userID,
+        ])
 
     return response
-
-
-
 
 
 
