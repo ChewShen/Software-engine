@@ -26,9 +26,11 @@ step 4: type _python manage.py makemigrations_
 
 step 5: type _python manage.py migrate_
 
-Step 6: type _python manage.py runserver_
+Step 6: to create superuser, type python manage.py createsuperuser, then fill in the detail requested
 
-Step 7: then when to your browser then seaerch for _127.0.0.1:8000_
+Step 7: type _python manage.py runserver_
+
+Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 
 
 
