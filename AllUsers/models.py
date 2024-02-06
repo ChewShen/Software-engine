@@ -50,6 +50,13 @@ class CustomUser(AbstractUser):
         super().delete(*args, **kwargs)
 
 
+    def save(self, *args, **kwargs):
+        if self.is_superuser and not self.role:
+            self.role = 'admin'
+        super().save(*args, **kwargs)
+
+
+
 
 @receiver(pre_delete, sender=CustomUser)
 def remove_user_from_groups(sender, instance, **kwargs):
