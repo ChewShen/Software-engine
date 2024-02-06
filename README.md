@@ -21,7 +21,7 @@ Step 3: you need to install all te pip which are:
 - sqlparse (standby)
 - tzdata (standby)
 -  asgiref (standby)
-
+------------------------------------------
 **By typing pip install (the package name)**
 
 step 4: type _python manage.py makemigrations_
@@ -38,7 +38,7 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 **extra: **<br/>
 You can deactivate your virtual enviroment by typing _deactivate_
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
 **Extra's extra**<br/><br/>
 <font size="25">**Resident POV**</font><br/>
@@ -92,11 +92,25 @@ You can deactivate your virtual enviroment by typing _deactivate_
 <br/><br/><br/><br/><br/><br/>
 
 <font size="25">**Administration POV**</font><br/>
-**Notice Board**
-- User can view the announcement updated by the admin
-- User can search the announcement by title
-- User can search the announcement by month also
+**CustumUser**
+- Admin can manage the user profile including their role, username, email, parking lot, house unit etc....
 
+**Payment**
+- Admin can maanage the invoice and to seletect where is the user have paid the excessive amount or not
 
+**Paymebnt Upload**
+- Admins can check the payment proofs submitted by residents
+
+**EmployeeSchedule**
+- Admin can upload the employee's working schedule
+
+**Feedback**
+- Admin can check for the feedback and feedback image
+
+**NoticeBoard**
+- Admin can upload the announcement
+
+**Visitor**
+- Admin can check for the visitor recordfdd
 
                                                                                                                                                                                                       
