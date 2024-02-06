@@ -37,14 +37,15 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 <br/><br/><br/><br/><br/><br/>
 
 **Extra:**<br/>
-You can deactivate your virtual enviroment by typing _deactivate_
+* You can deactivate your virtual enviroment by typing _deactivate_
 <br/><br/>
-You can create admin(superuser) by typing **python manage.py createsuperadmin** and fill in the detail requested
+* You can create admin(superuser) by typing **python manage.py createsuperadmin** and fill in the detail requested
 <br/><br/>
-For Employee, admin need to register at website first, then change the role manually to Employee
+* For Employee, admin need to register at website first, then change the role manually to Employee
 <br/><br/>
-If you want to update the admin logout, change the file by nagivate to \venv\Lib\site-packages\jazzmin\templates\admin...... find the base.html then replace it
-
+* If you want to update the admin logout, change the file by nagivate to \venv\Lib\site-packages\jazzmin\templates\admin...... find the base.html then replace it
+<br/><br/>
+* For adnmin to generate report, type in the address [127.0.0.1:8000/AllUsers/generatecsv](http://127.0.0.1:8000/AllUsers/generatecsv/) in the browser
 
 <br/><br/><br/><br/>
 
