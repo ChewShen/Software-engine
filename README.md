@@ -68,13 +68,13 @@ You can deactivate your virtual enviroment by typing _deactivate_
 - User will be logged out
 
   
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
 <font size="25">**Visitor POV**</font><br/>
 - Users need to fill out the form before entering the residential area
 - Users can provide feedback and also upload pictures to accompany their complaints
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
 <font size="25">**Employee POV**</font><br/>
 **Notice Board**
@@ -89,7 +89,7 @@ You can deactivate your virtual enviroment by typing _deactivate_
 **View Timetable**
 - User can view their working schedule
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
 <font size="25">**Administration POV**</font><br/>
 **CustumUser**
