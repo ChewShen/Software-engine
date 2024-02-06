@@ -4,21 +4,25 @@ Activate Your Virtual Environment (Optional but recommended):
 
 you can continue by:
   
-**1. To start the program**
+**To start the program**
 
 Step 1: typing _python -m venv venv_ in cmd
 
 Step 2: then type venv\Scripts\activate
 
 Step 3: you need to install all te pip which are:
-- asgiref (standby)
-- Django  (needed)
-- django-jazzmin (needed)
-- pillow (needed)
+-------------------------------------------
+        - Django  (needed)
+        - django-jazzmin (needed)
+        - pillow (needed)
+
+-------------------------------------------
+  
 - sqlparse (standby)
 - tzdata (standby)
+-  asgiref (standby)
 
-  by typing pip install (the package name)
+**By typing pip install (the package name)**
 
 step 4: type _python manage.py makemigrations_
 
@@ -29,9 +33,70 @@ Step 7: type _python manage.py runserver_
 Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 
 
+<br/><br/><br/><br/><br/><br/>
+
+**extra: **<br/>
+You can deactivate your virtual enviroment by typing _deactivate_
+
+<br/><br/><br/><br/><br/><br/>
+
+**Extra's extra**<br/><br/>
+<font size="25">**Resident POV**</font><br/>
+**Notice Board**
+- User can view the announcement updated by the admin
+- User can search the announcement by title
+- User can search the announcement by month also
 
 
-**extra: **
-1) You can deactivate your virtual enviroment by typing _deactivate_
-2) For adding new
-      
+**Manage Profile**
+- User can view their parking lot and house unit but unable to change it
+- User can manage their profile (username, email etc)
+- User can also change the password (It will redirect to the other page)
+
+
+**Bill Payment**
+- User can view their outstanding amount
+- Inovice will be shown to the user, user can als choose to download it
+- User need to upload the proof of payment when submitting
+
+
+**Feedback**
+- Users can provide feedback and also upload pictures to accompany their complaints
+
+  
+**Logout**
+- User will be logged out
+
+  
+<br/><br/><br/><br/><br/><br/>
+
+<font size="25">**Visitor POV**</font><br/>
+- Users need to fill out the form before entering the residential area
+- Users can provide feedback and also upload pictures to accompany their complaints
+
+<br/><br/><br/><br/><br/><br/>
+
+<font size="25">**Employee POV**</font><br/>
+**Notice Board**
+- User can view the announcement updated by the admin
+- User can search the announcement by title
+- User can search the announcement by month also
+
+**Manage Profile**
+- User can manage their profile (username, email etc)
+- User can also change the password (It will redirect to the other page)
+
+**View Timetable**
+- User can view their working schedule
+
+<br/><br/><br/><br/><br/><br/>
+
+<font size="25">**Administration POV**</font><br/>
+**Notice Board**
+- User can view the announcement updated by the admin
+- User can search the announcement by title
+- User can search the announcement by month also
+
+
+
+                                                                                                                                                                                                      
