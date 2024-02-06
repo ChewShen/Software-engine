@@ -4,7 +4,7 @@ Activate Your Virtual Environment (Optional but recommended):
 
 you can continue by:
   
-**1. When ever you encounting any problem, you can do it manually by**
+**1. To start the program**
 
 Step 1: typing _python -m venv venv_ in cmd
 
