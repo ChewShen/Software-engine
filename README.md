@@ -111,6 +111,6 @@ You can deactivate your virtual enviroment by typing _deactivate_
 - Admin can upload the announcement
 
 **Visitor**
-- Admin can check for the visitor recordfdd
+- Admin can check for the visitor record
 
                                                                                                                                                                                                       
