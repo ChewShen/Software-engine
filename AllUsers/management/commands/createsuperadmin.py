@@ -7,7 +7,7 @@ class Command(createsuperuser.Command):
 
     def handle(self, *args, **options):
         try:
-            # print("Options:", options)  # Add this line for debugging
+            print("Options:", options)  # Add this line for debugging
             
             # Call the original createsuperuser command
             super().handle(*args, **options)

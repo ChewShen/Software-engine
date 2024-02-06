@@ -4,9 +4,7 @@ Activate Your Virtual Environment (Optional but recommended):
 
 you can continue by:
   
-**1. When ever you encounting any problem, you can do it manually by**
-
-**Important: delete the db.sqlite3 file**
+**1. To start the program**
 
 Step 1: typing _python -m venv venv_ in cmd
 
@@ -26,8 +24,6 @@ step 4: type _python manage.py makemigrations_
 
 step 5: type _python manage.py migrate_
 
-Step 6: to create superuser, type python manage.py createsuperuser, then fill in the detail requested
-
 Step 7: type _python manage.py runserver_
 
 Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
@@ -35,4 +31,7 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 
 
 
-extra: you can deactivate your virtual enviroment by typing _deactivate_
+**extra: **
+1) You can deactivate your virtual enviroment by typing _deactivate_
+2) For adding new
+      
