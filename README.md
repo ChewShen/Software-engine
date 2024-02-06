@@ -10,7 +10,7 @@ Step 1: typing _python -m venv venv_ in cmd
 
 Step 2: then type venv\Scripts\activate
 
-Step 3: you need to install all te pip which are:
+Step 3: you need to install all the pip which are:
 -------------------------------------------
         - Django  (needed)
         - django-jazzmin (needed)
