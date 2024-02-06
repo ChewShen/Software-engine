@@ -17,7 +17,8 @@ Step 3: you need to install all the pip which are:
         - pillow (needed)
 
 -------------------------------------------
-  
+
+<br/>Ignore this for now
 - sqlparse (standby)
 - tzdata (standby)
 - asgiref (standby)
