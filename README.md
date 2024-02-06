@@ -20,7 +20,7 @@ Step 3: you need to install all te pip which are:
   
 - sqlparse (standby)
 - tzdata (standby)
--  asgiref (standby)
+- asgiref (standby)
 ------------------------------------------
 **By typing pip install (the package name)**
 
@@ -37,6 +37,11 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 
 **Extra:**<br/>
 You can deactivate your virtual enviroment by typing _deactivate_
+<br/><br/>
+You can create admin(superuser) by typing **python manage.py createsuperadmin** and fill in the detail requested
+<br/><br/>
+For Employee, admin need to register at website first, then change the role manually to Employee
+
 
 <br/><br/><br/><br/>
 
