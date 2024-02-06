@@ -41,6 +41,8 @@ You can deactivate your virtual enviroment by typing _deactivate_
 You can create admin(superuser) by typing **python manage.py createsuperadmin** and fill in the detail requested
 <br/><br/>
 For Employee, admin need to register at website first, then change the role manually to Employee
+<br/><br/>
+If you want to update the admin logout, change the file by nagivate to \venv\Lib\site-packages\jazzmin\templates\admin...... find the base.html then replace it
 
 
 <br/><br/><br/><br/>
