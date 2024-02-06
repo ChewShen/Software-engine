@@ -35,7 +35,7 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 
 <br/><br/><br/><br/><br/><br/>
 
-**extra: **<br/>
+**Extra: **<br/>
 You can deactivate your virtual enviroment by typing _deactivate_
 
 <br/><br/><br/><br/>
