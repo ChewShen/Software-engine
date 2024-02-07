@@ -107,9 +107,8 @@ def ResidentEdit(request):
 
     return render(request, 'authentication/ResidentEdit.html', {'form': form})
 
-
+from django.http import HttpResponseRedirect                                                                                                                                            
 class PassChangeView(PasswordChangeView):
-    # form_class = PasswordChangeForm
     form_class = PassChangeForm  
     success_url = reverse_lazy('ResidentLanding')
 
@@ -117,7 +116,37 @@ class PassChangeView(PasswordChangeView):
         response = super().form_valid(form)
         messages.success(self.request, "Password changed successfully.")
         print("Password changed successfully.")
-        return response
+
+        # Get the current user
+        user = self.request.user
+
+        # Redirect based on user's role
+        if user.role == 'Resident':
+            return HttpResponseRedirect(reverse_lazy('ResidentLanding'))
+        elif user.role == 'Employee':
+            return HttpResponseRedirect(reverse_lazy('EmployeeLanding'))
+        else:
+            # Default redirect if role is not recognized
+            return HttpResponseRedirect(reverse_lazy('DefaultRedirect'))
+
+        return response    
+
+    def form_invalid(self, form):
+            # Handle form errors
+            for field, errors in form.errors.items():
+                for error in errors:
+                    if field == "old_password":
+                        custom_error = f"Old Password: {error}"
+                        messages.error(self.request, custom_error)
+
+                    elif field == "new_password2":
+                        custom_error = f" New Password: {error}"
+                        messages.error(self.request, custom_error)
+
+                    else:
+                        messages.error(self.request, f"{field}: {error}")
+
+            return super().form_invalid(form)                                                                                                                
     
 
 @login_required
