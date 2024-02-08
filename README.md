@@ -125,11 +125,6 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 **Visitor**
 - Admin can check for the visitor record
 
-<br/><br/><br/><br/>
 
-<font size="25">**Visitor POV**</font><br/>
-- Visitor does not required to sign in
-- Visitor required to fill in all the detail requested by the form
-- Visitor can also make feedback
 
-                                                                                                                                                                                                      
+                                                                                                                                                        
