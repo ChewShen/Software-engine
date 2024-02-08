@@ -120,7 +120,7 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 - Admin can upload the announcement
 
 **Generate Report**
-- Type [127.0.0.1:8000/AllUsers/generatecsv](http://127.0.0.1:8000/AllUsers/generatecsv/) to view the report tab
+- Type [127.0.0.1:8000/AllUsers/generatecsv](http://127.0.0.1:8000/AllUsers/generatecsv/) at your browser to view the report tab
 
 <br/><br/><br/><br/><br/><br/>
 
