@@ -99,13 +99,20 @@ def ResidentEdit(request):
     if request.method == 'POST':
         form = UserProfileChangeForm(request.POST, instance=request.user)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Profile updated successfully")
-            return redirect('/ResidentLanding')
+            if form.has_changed(): 
+                form.save()
+                messages.success(request, "Profile updated successfully")
+                return redirect('/ResidentLanding')
+            
+            else:
+                messages.info(request, "No changes were made to your profile")
+                return redirect('/ResidentLanding')
     else:
         form = UserProfileChangeForm(instance=request.user)
 
     return render(request, 'authentication/ResidentEdit.html', {'form': form})
+
+
 
 from django.http import HttpResponseRedirect                                                                                                                                            
 class PassChangeView(PasswordChangeView):
@@ -154,13 +161,18 @@ def EmployeeEdit(request):
     if request.method == 'POST':
         form = UserProfileChangeForm(request.POST, instance=request.user)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Profile updated successfully")
-            return redirect('/EmployeeLanding')
+            if form.has_changed():  # Check if the form data has changed
+                form.save()
+                messages.success(request, "Profile updated successfully")
+                return redirect('/EmployeeLanding')
+            else:
+                messages.info(request, "No changes were made to your profile")
+                return redirect('/EmployeeLanding')
     else:
         form = UserProfileChangeForm(instance=request.user)
 
     return render(request, 'authentication/EmployeeEdit.html', {'form': form})
+
 
 
 
