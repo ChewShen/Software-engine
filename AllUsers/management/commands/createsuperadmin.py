@@ -7,7 +7,7 @@ class Command(createsuperuser.Command):
 
     def handle(self, *args, **options):
         try:
-            print("Options:", options)  # Add this line for debugging
+            # print("Options:", options)  # Add this line for debugging
             
             # Call the original createsuperuser command
             super().handle(*args, **options)
@@ -17,10 +17,10 @@ class Command(createsuperuser.Command):
             superuser = CustomUser.objects.get(username=username)
 
             # Assign role "admin" to the superuser
-            superuser.role = 'admin'
+            superuser.role = 'Admin'
             superuser.save()
             
-            self.stdout.write(self.style.SUCCESS(f'Superuser "{username}" created successfully with role "admin"'))
+            self.stdout.write(self.style.SUCCESS(f'Superuser "{username}" created successfully with role "Admin"'))
         except CustomUser.DoesNotExist:
             raise CommandError(f"CustomUser matching query does not exist for username: {username}")
         except Exception as e:
