@@ -45,7 +45,7 @@ Step 8: then when to your browser then seaerch for _127.0.0.1:8000_
 <br/><br/>
 * If you want to update the admin logout, change the file by nagivate to \venv\Lib\site-packages\jazzmin\templates\admin...... find the base.html then replace it
 <br/><br/>
-* For adnmin to generate report, type in the address [127.0.0.1:8000/AllUsers/generatecsv](http://127.0.0.1:8000/AllUsers/generatecsv/) in the browser
+* For admin to generate report, type in the address after login into **the admin account first** [127.0.0.1:8000/AllUsers/generatecsv](http://127.0.0.1:8000/AllUsers/generatecsv/) in the browser
 
 <br/><br/><br/><br/>
 
